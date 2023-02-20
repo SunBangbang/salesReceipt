@@ -1,0 +1,103 @@
+
+<view class="main" style="border-top: 1px solid #e4e4e4">
+    <search showRightIcon="{{true}}" width="620rpx"></search>
+    <swiper autoplay="{{true}}" circular="{{true}}" class="banner">
+        <swiper-item wx:for="{{bannerList}}" wx:key="index">
+            <image bindtap="jumpLink" class="banner-img" data-url="{{item.url}}" mode="aspectFill" src="{{item.pic}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="notice">
+        <view>牛卖头条：</view>
+        <l-notice-bar id="notice-bar" type="roll">{{notice}}</l-notice-bar>
+    </view>
+    <view class="module">
+        <view class="top">
+            <view class="top-title">
+                <image class="top-img" src="/images/top-title.png"></image>
+                <image class="top1" mode="aspectFill" src="{{hotList[0].url}}"></image>
+                <image class="top2" mode="aspectFill" src="{{hotList[1].url}}"></image>
+                <image class="top3" mode="aspectFill" src="{{hotList[2].url}}"></image>
+            </view>
+            <view class="top-list">
+                <view class="top-list-item" hidden="{{index>2}}" wx:for="{{hotList}}" wx:key="index">{{index+1}}. {{item.name}}</view>
+                <view bindtap="jumpLink" class="top-list-more" data-url="/pages/top/top">查看全部</view>
+            </view>
+        </view>
+        <view class="btn">
+            <image bindtap="jumpLink" class="btn-item" data-url="/pages/sell/sell" src="/images/module-btn1.png"></image>
+            <image bindtap="jumpLink" class="btn-item" data-url="/pages/share/share" src="/images/module-btn2.png"></image>
+        </view>
+    </view>
+</view>
+<view class="type-box">
+    <view class="type">
+        <view bindtap="jumpLink" class="type-item" data-banner="{{item.picUrl}}" data-id="{{item.id}}" data-name="{{item.name}}" data-url="{{item.link}}" wx:for="{{typeList1}}" wx:key="index">
+            <image class="type-img" src="{{item.icon}}"></image>
+            <view class="type-text">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="type" style="margin-top:30rpx">
+        <view bindtap="jumpLink" class="type-item" data-banner="{{item.picUrl}}" data-id="{{item.id}}" data-name="{{item.name}}" data-url="{{item.link}}" wx:for="{{typeList2}}" wx:key="index">
+            <image class="type-img" src="{{item.icon}}"></image>
+            <view class="type-text">{{item.name}}</view>
+        </view>
+    </view>
+</view>
+<l-sticky>
+    <l-sticky-item>
+        <view slot="header">
+            <view class="list-title">
+                <view class="list-title-left">牛卖热卖</view>
+                <view bindtap="jumpLink" class="list-title-right" data-url="/pages/top/top">查看更多</view>
+            </view>
+        </view>
+        <view slot="body">
+            <view class="list">
+                <book list="{{hotList}}"></book>
+            </view>
+        </view>
+    </l-sticky-item>
+    <l-sticky-item>
+        <view slot="header">
+            <view class="list-title">
+                <view class="list-title-left">甄选新书</view>
+                <view bindtap="jumpLink" class="list-title-right" data-url="/pages/newest/newest">查看更多</view>
+            </view>
+        </view>
+        <view slot="body">
+            <view class="list">
+                <book list="{{newList}}"></book>
+            </view>
+        </view>
+    </l-sticky-item>
+    <l-sticky-item>
+        <view slot="header">
+            <view class="list-title">
+                <view class="list-title-left">9.9包邮</view>
+                <view bindtap="jumpLink" class="list-title-right" data-id="65" data-url="/pages/promote/promote">查看更多</view>
+            </view>
+        </view>
+        <view slot="body">
+            <view class="list">
+                <book list="{{freeList}}"></book>
+            </view>
+        </view>
+    </l-sticky-item>
+    <l-sticky-item>
+        <view slot="header">
+            <view class="list-title">
+                <view class="list-title-left">低价专区</view>
+                <view bindtap="jumpLink" class="list-title-right" data-id="67" data-url="/pages/promote/promote">查看更多</view>
+            </view>
+        </view>
+        <view slot="body">
+            <view class="list">
+                <book list="{{cheapList}}"></book>
+            </view>
+        </view>
+    </l-sticky-item>
+</l-sticky>
+<view class="footer-tip">
+    <i-load-more loading="{{false}}"></i-load-more>
+</view>
+<footer idx="0"></footer>

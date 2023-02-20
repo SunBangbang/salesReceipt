@@ -1,0 +1,319 @@
+page {
+    background: #f8f8f8;
+    box-shadow: inset 0 2px 8px 0 hsla(0,0%,79%,.5);
+    box-sizing: border-box;
+    min-height: 100%;
+    padding-bottom: 360rpx;
+}
+
+.limit {
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    height: 90rpx;
+    margin-left: 30rpx;
+    width: 690rpx;
+}
+
+.limit image {
+    height: 46rpx;
+    margin-right: 10rpx;
+    width: 146rpx;
+}
+
+.list {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 4px 4px 10px 0 hsla(0,0%,84%,.5);
+    box-sizing: border-box;
+    margin: 0 30rpx;
+    padding: 0 30rpx;
+    width: 690rpx;
+}
+
+.item {
+    align-items: center;
+    border-bottom: 1px solid #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+}
+
+.img {
+    border-radius: 8rpx;
+    height: 136rpx;
+    width: 96rpx;
+}
+
+.item-info {
+    flex-direction: column;
+    min-height: 136rpx;
+    width: 500rpx;
+}
+
+.item-info,.item-info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    color: #333;
+    font-size: 28rpx;
+    max-width: 400rpx;
+}
+
+.author {
+    color: #b5b5b5;
+    font-size: 24rpx;
+}
+
+.item-close {
+    color: #1dc4ab;
+    font-size: 28rpx;
+}
+
+.name text {
+    color: #ed5c3e;
+    font-family: PingFangSC-Medium;
+}
+
+.rule {
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    justify-content: space-between;
+    line-height: 100rpx;
+}
+
+.rule image {
+    height: 29rpx;
+    width: 16rpx;
+}
+
+.sell-btn-box {
+    bottom: 220rpx;
+    box-sizing: border-box;
+    justify-content: space-between;
+    left: 0;
+    padding: 0 50rpx;
+    position: fixed;
+    width: 100%;
+}
+
+.sell-btn-box,.sell-btn-item {
+    display: flex;
+}
+
+.sell-btn-item {
+    align-items: center;
+    background: #c4c4c4;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 30rpx;
+    height: 70rpx;
+    justify-content: center;
+    width: 300rpx;
+}
+
+.sell-btn-item image {
+    height: 32rpx;
+    margin-right: 14rpx;
+    width: 32rpx;
+}
+
+.sell-btn-scan {
+    background: #1dc4ab;
+}
+
+.total-main {
+    align-items: center;
+    background: #fff;
+    bottom: 0;
+    display: flex;
+    height: 100rpx;
+    justify-content: space-between;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.total-main-left {
+    color: #333;
+    font-size: 28rpx;
+    padding-left: 30rpx;
+}
+
+.total-main-left text {
+    color: #ed5c3e;
+    font-family: PingFangSC-Medium;
+}
+
+.total-main-right {
+    background: #c4c4c4;
+    color: #fff;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 240rpx;
+}
+
+.total-main-right.on {
+    background: #1dc4ab;
+}
+
+.sell-warn {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 560rpx;
+    z-index: 300;
+}
+
+.sell-warn-tip {
+    color: #888;
+    font-size: 30rpx;
+}
+
+.sell-warn-img {
+    height: 96rpx;
+    margin-top: 32rpx;
+    width: 86rpx;
+}
+
+.sell-warn-title {
+    color: #000;
+    font-size: 36rpx;
+    margin-top: 12rpx;
+}
+
+.sell-warn-btn {
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    height: 100rpx;
+    margin-top: 30rpx;
+    width: 560rpx;
+}
+
+.sell-warn-btn view {
+    border-right: 1px solid #e5e5e5;
+    color: #000;
+}
+
+.sell-warn-btn view,.sell-warn-sell {
+    box-sizing: border-box;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 280rpx;
+}
+
+.sell-warn-sell {
+    border: none!important;
+    color: #1dc4ab!important;
+    padding: 0;
+}
+
+.sell-scan-title {
+    color: #000;
+    font-size: 36rpx;
+    margin: 50rpx auto 20rpx;
+}
+
+.sell-scan-btn {
+    border-top: 1px solid #e5e5e5;
+    color: #1dc4ab;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-top: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.sell-input {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 690rpx;
+    z-index: 300;
+}
+
+.sell-input-title {
+    border-bottom: 1px solid #e5e5e5;
+    color: #000;
+    font-size: 40rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+    margin-bottom: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.sell-input-tip {
+    color: #333;
+    font-family: PingFangSC-Light;
+    font-size: 34rpx;
+    line-height: 48rpx;
+}
+
+.sell-input-img {
+    height: 90rpx;
+    margin-top: 50rpx;
+    width: 570rpx;
+}
+
+.sell-input-code {
+    color: #333;
+    display: flex;
+    font-family: PingFangSC-Light;
+    font-size: 28rpx;
+    justify-content: space-between;
+    margin: 15rpx 0 50rpx;
+    width: 570rpx;
+}
+
+.sell-input-value {
+    background: #f8f8f8;
+    border-radius: 8rpx;
+    color: #000;
+    font-size: 30rpx;
+    height: 100rpx;
+    text-align: center;
+    width: 630rpx;
+}
+
+.sell-input-wrong {
+    color: #ed5c3e;
+    font-size: 30rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    margin: 20rpx 0;
+}
+
+.sell-input-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 36rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-bottom: 40rpx;
+    text-align: center;
+    width: 300rpx;
+}

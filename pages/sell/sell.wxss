@@ -1,0 +1,278 @@
+page {
+    background: #f8f8f8;
+    padding-bottom: 130rpx;
+}
+
+.sell-step {
+    background: #fff;
+    border-top: 1px solid #e4e4e4;
+    padding: 60rpx 0 70rpx;
+    width: 100%;
+}
+
+.sell-step-top {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60rpx 0 50rpx;
+}
+
+.sell-step-top,.sell-step-top-left {
+    display: flex;
+}
+
+.sell-no {
+    height: 41rpx;
+    margin-right: 36rpx;
+    margin-top: 12rpx;
+    width: 41rpx;
+}
+
+.sell-title {
+    color: #3c3c3c;
+    font-family: PingFangSC-Medium;
+    font-size: 48rpx;
+    line-height: 68rpx;
+}
+
+.sell-question {
+    align-items: center;
+    display: flex;
+    margin-top: 28rpx;
+}
+
+.sell-question view {
+    color: #1dc4ab;
+    font-size: 28rpx;
+}
+
+.sell-question image {
+    height: 13rpx;
+    margin-left: 10rpx;
+    width: 22rpx;
+}
+
+.sell-question-on {
+    transform: rotate(-180deg);
+}
+
+.sell-img {
+    width: 200rpx;
+}
+
+.sell-answer-main {
+    margin-top: 30rpx;
+}
+
+.sell-answer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+}
+
+.sell-answer-point {
+    background: #1dc4ab;
+    border-radius: 10rpx;
+    height: 10rpx;
+    margin-top: 13rpx;
+    width: 10rpx;
+}
+
+.sell-answer-text {
+    color: #333;
+    font-family: PingFangSC-Light;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    width: 670rpx;
+}
+
+.sell-btn-box {
+    justify-content: space-between;
+    margin-top: 70rpx;
+    padding: 0 50rpx;
+}
+
+.sell-btn-box,.sell-btn-item {
+    display: flex;
+}
+
+.sell-btn-item {
+    align-items: center;
+    background: #c4c4c4;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 30rpx;
+    height: 70rpx;
+    justify-content: center;
+    width: 300rpx;
+}
+
+.sell-btn-item image {
+    height: 32rpx;
+    margin-right: 14rpx;
+    width: 32rpx;
+}
+
+.sell-btn-scan {
+    background: #1dc4ab;
+}
+
+.sell-rule {
+    color: #888;
+    font-size: 20rpx;
+    margin: 50rpx auto 0;
+    text-align: center;
+}
+
+.sell-warn {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 560rpx;
+    z-index: 300;
+}
+
+.sell-warn-img {
+    height: 96rpx;
+    margin-top: 32rpx;
+    width: 86rpx;
+}
+
+.sell-warn-title {
+    color: #000;
+    font-size: 36rpx;
+    margin-top: 12rpx;
+}
+
+.sell-warn-tip {
+    color: #888;
+    font-size: 30rpx;
+}
+
+.sell-warn-btn {
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    height: 100rpx;
+    margin-top: 30rpx;
+    width: 560rpx;
+}
+
+.sell-warn-btn view {
+    border-right: 1px solid #e5e5e5;
+    color: #000;
+}
+
+.sell-warn-btn view,.sell-warn-sell {
+    box-sizing: border-box;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 280rpx;
+}
+
+.sell-warn-sell {
+    border: none!important;
+    color: #1dc4ab!important;
+    padding: 0;
+}
+
+.sell-scan-title {
+    color: #000;
+    font-size: 36rpx;
+    margin: 50rpx auto 20rpx;
+}
+
+.sell-scan-btn {
+    border-top: 1px solid #e5e5e5;
+    color: #1dc4ab;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-top: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.sell-input {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 690rpx;
+    z-index: 300;
+}
+
+.sell-input-title {
+    border-bottom: 1px solid #e5e5e5;
+    color: #000;
+    font-size: 40rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+    margin-bottom: 30rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.sell-input-tip {
+    color: #333;
+    font-family: PingFangSC-Light;
+    font-size: 34rpx;
+    line-height: 48rpx;
+}
+
+.sell-input-img {
+    height: 90rpx;
+    margin-top: 50rpx;
+    width: 570rpx;
+}
+
+.sell-input-code {
+    color: #333;
+    display: flex;
+    font-family: PingFangSC-Light;
+    font-size: 28rpx;
+    justify-content: space-between;
+    margin: 15rpx 0 50rpx;
+    width: 570rpx;
+}
+
+.sell-input-value {
+    background: #f8f8f8;
+    border-radius: 8rpx;
+    color: #000;
+    font-size: 30rpx;
+    height: 100rpx;
+    text-align: center;
+    width: 630rpx;
+}
+
+.sell-input-wrong {
+    color: #ed5c3e;
+    font-size: 30rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    margin: 20rpx 0;
+}
+
+.sell-input-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 36rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-bottom: 40rpx;
+    text-align: center;
+    width: 300rpx;
+}

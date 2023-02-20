@@ -1,0 +1,37 @@
+<view class="search-box">
+    <view class="search-left">
+        <image class="search-icon" src="/images/icon-search.png"></image>
+        <input bindinput="getKey" class="search-input" focus="{{true}}" placeholder="ISBN / 书名 / 作者 / 出版社" placeholderClass="search-tip" value="{{key}}"></input>
+        <image bindtap="emptyKey" class="search-cancel" hidden="{{!isInput}}" src="/images/icon-search-close.png"></image>
+    </view>
+    <view bindtap="doSearch" class="search-right">搜索</view>
+</view>
+<view class="search-title" hidden="{{isInput}}">
+    <view>热门搜索</view>
+    <image bindtap="getHot" src="/images/icon-search-refresh.png"></image>
+</view>
+<view class="search-key" hidden="{{isInput}}">
+    <view bindtap="chooseKey" class="key-item" data-key="{{item}}" wx:for="{{hotList}}" wx:key="index">{{item}}</view>
+</view>
+<view class="search-title" hidden="{{isInput}}">
+    <view>历史记录</view>
+    <image bindtap="emptyHistory" src="/images/icon-search-delete.png"></image>
+</view>
+<view class="search-key" hidden="{{isInput}}">
+    <view bindtap="chooseKey" class="key-item" data-key="{{item}}" wx:for="{{historyList}}" wx:key="index">{{item}}</view>
+</view>
+<view class="relevant-list" hidden="{{!isInput||isSearch}}">
+    <view bindtap="chooseKey" class="relevant-item" data-key="{{item.name}}" wx:for="{{bookList}}" wx:key="index">{{item.name}}</view>
+</view>
+<view class="search-main" hidden="{{!isSearch||bookList.length==0}}">
+    <order-btn bind:getOrder="changeOrder" nav="{{order}}"></order-btn>
+    <book list="{{bookList}}"></book>
+</view>
+<view hidden="{{!isSearch||bookList.length>0}}">
+    <empty img="https://mini.cainiaoshoushu.com/face/img/empty-search.png" tip="暂无搜索结果"></empty>
+</view>
+<view class="loading-main" hidden="{{!showLoading}}">
+    <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+</view>
+<shop showShop="{{isTop}}"></shop>
+<top showTop="{{isTop}}"></top>

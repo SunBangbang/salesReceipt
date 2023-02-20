@@ -1,0 +1,86 @@
+.i-switch {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    transition: all .2s ease-in-out;
+    vertical-align: middle;
+    width: 48px;
+}
+
+.i-switch-hide-input {
+    display: none;
+    opacity: 0;
+}
+
+.i-switch-inner {
+    color: #fff;
+    font-size: 12px;
+    left: 25px;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.i-switch-inner .i-icon {
+    height: 12px;
+    text-align: center;
+    vertical-align: middle;
+    width: 12px;
+}
+
+.i-switch:after {
+    background-color: #fff;
+    border-radius: 22px;
+    content: "";
+    cursor: pointer;
+    height: 22px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    transition: left .2s ease-in-out,width .2s ease-in-out;
+    width: 22px;
+}
+
+.i-switch-checked:after {
+    left: 8px;
+}
+
+.i-switch-large {
+    width: 60px;
+}
+
+.i-switch-large.i-switch-checked:after {
+    left: 37px;
+}
+
+.i-switch-checked {
+    background-color: #1dc4ab;
+    border-color: #1dc4ab;
+}
+
+.i-switch-checked .i-switch-inner {
+    left: 8px;
+}
+
+.i-switch-checked:after {
+    left: 25px;
+}
+
+.i-switch-disabled {
+    background: #f3f3f3;
+    border-color: #f3f3f3;
+}
+
+.i-switch-disabled:after {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.i-switch-disabled .i-switch-inner {
+    color: #ccc;
+}

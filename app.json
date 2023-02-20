@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/store/store",
+    "pages/search/search",
+    "pages/type/type",
+    "pages/top/top",
+    "pages/typeList/typeList",
+    "pages/newest/newest",
+    "pages/bookDetail/bookDetail",
+    "pages/shopOrderShare/shopOrderShare",
+    "pages/shopCreate/shopCreate",
+    "pages/sell/sell",
+    "pages/sellCart/sellCart",
+    "pages/sellCreate/sellCreate",
+    "pages/personal/personal",
+    "pages/wallet/wallet",
+    "pages/walletLog/walletLog",
+    "pages/coupon/coupon",
+    "pages/share/share",
+    "pages/shareRule/shareRule",
+    "pages/shopOrderList/shopOrderList",
+    "pages/shopOrderDetail/shopOrderDetail",
+    "pages/sellOrderList/sellOrderList",
+    "pages/sellOrderDetail/sellOrderDetail",
+    "pages/addressList/addressList",
+    "pages/addressEdit/addressEdit",
+    "pages/feedback/feedback",
+    "pages/rule/rule",
+    "pages/agreement/agreement",
+    "pages/about/about",
+    "pages/activityHelp/activityHelp",
+    "pages/shopcart/shopcart"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "牛卖收书",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

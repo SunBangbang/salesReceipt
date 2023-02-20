@@ -1,0 +1,68 @@
+<view class="{{isPop?'page':''}}">
+    <view class="nav">
+        <view bindtap="changeNav" class="{{status?'':'on'}}">全部</view>
+        <view bindtap="changeNav" class="{{status==100?'on':''}}" data-status="100">待预审</view>
+        <view bindtap="changeNav" class="{{status==102?'on':''}}" data-status="102">待入库</view>
+        <view bindtap="changeNav" class="{{status==103?'on':''}}" data-status="103">待审核</view>
+        <view bindtap="changeNav" class="{{status==101105?'on':''}}" data-status="101105">售后</view>
+    </view>
+    <view hidden="{{!isEmpty}}" style="padding-top: 100rpx">
+        <empty img="https://mini.cainiaoshoushu.com/face/img/empty-order.png" tip="暂无相关订单信息"></empty>
+    </view>
+    <view bindtap="goDetail" class="order-item" data-id="{{item.id}}" hidden="{{isEmpty||status&&status!=item.commonStatus}}" wx:for="{{list}}" wx:key="index">
+        <view class="order-info">
+            <view class="order-info-left">
+                <view class="no">{{item.orderNo}}</view>
+                <view catchtap="copy" class="copy" data-no="{{item.orderNo}}">复制</view>
+            </view>
+            <view class="status">{{item.statusName}}</view>
+        </view>
+        <swiper class="order-details" displayMultipleItems="5">
+            <swiper-item wx:for="{{item.details}}" wx:for-item="each" wx:key="index">
+                <image class="img" mode="aspectFill" src="{{each.faceUrl}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="order-total" hidden="{{item.orderStatus==104||item.orderStatus==105}}">共计 <text>{{item.totalNum}}</text> 本，预估可卖 <text>￥{{item.totalPrice}}</text>
+        </view>
+        <view class="order-total" hidden="{{item.orderStatus!=104&&item.orderStatus!=105}}">实收 <text>{{item.finalNum}}</text> 本，实际到账 <text>￥{{item.finalPrice}}</text>
+        </view>
+        <view class="order-btn">
+            <view catchtap="cancelOrder" data-id="{{item.id}}" hidden="{{item.orderStatus!=100&&item.orderStatus!=102}}">取消订单</view>
+            <view catchtap="sellAgain" class="share-btn" data-id="{{item.orderNo}}" hidden="{{item.orderStatus!=101}}">
+                <text>重新下单</text>
+            </view>
+            <view catchtap="checkShip" class="share-btn" data-no="{{item.mailNo}}" hidden="{{item.orderStatus<102}}">
+                <text>查看物流</text>
+            </view>
+            <button catchtap="share" class="share-btn" data-id="{{item.orderNo}}" openType="share" plain="true">
+                <text>分享订单</text>
+            </button>
+        </view>
+    </view>
+</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<image bindtap="closePop" class="close-btn" hidden="{{!isClose}}" src="/images/icon-pop-close2.png"></image>
+<view class="pop" hidden="{{!isDelete}}">
+    <view class="pop-tip">确认取消该订单？</view>
+    <view class="pop-btn">
+        <view bindtap="closePop">取消</view>
+        <view bindtap="confirmCancel" class="confirm-btn">确定</view>
+    </view>
+</view>
+<view class="sell-warn" hidden="{{!isTip}}">
+    <view class="sell-scan-title">抱歉</view>
+    <view class="sell-warn-tip">暂无物流信息</view>
+    <view bindtap="closePop" class="sell-scan-btn">好的</view>
+</view>
+<view class="flow-pop" hidden="{{!isShip}}">
+    <view class="flow-no">
+        <view>德邦：{{shipNo}}</view>
+        <view bindtap="copy" class="copy" data-no="{{shipNo}}">复制</view>
+    </view>
+    <view class="flow-main">
+        <view class="flow-tip" hidden="{{shipList.length>0}}">暂无物流信息</view>
+        <l-steps activeIndex="{{shipList.length-1}}" direction="column" hidden="{{shipList.length>0}}" reverse="{{true}}" stepMinHeight="160">
+            <l-step describe="{{item.description}}" title="{{item.time}}" wx:for="{{shipList}}" wx:key="index"></l-step>
+        </l-steps>
+    </view>
+</view>

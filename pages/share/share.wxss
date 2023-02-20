@@ -1,0 +1,196 @@
+page {
+    background: #f8f8f8;
+    padding-bottom: 30rpx;
+}
+
+.share-box {
+    background: #312c42;
+    box-shadow: 4px 4px 10px 0 rgba(97,97,97,.5);
+    height: 420rpx;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.share-bg,.share-main {
+    height: 360rpx;
+    left: 30rpx;
+    position: absolute;
+    top: 30rpx;
+    width: 690rpx;
+}
+
+.share-main-row {
+    align-items: center;
+    display: flex;
+    height: 86rpx;
+    width: 100%;
+}
+
+.share-avatar {
+    background: #fff;
+    border-radius: 60rpx;
+    height: 60rpx;
+    margin: 0 36rpx;
+    width: 60rpx;
+}
+
+.share-vip {
+    border-right: 1px solid #fd5701;
+    color: #fd5701;
+    font-size: 40rpx;
+    font-weight: 700;
+    margin: 0 30rpx 0 50rpx;
+    padding-right: 30rpx;
+}
+
+.share-rule {
+    color: #fd5701;
+    font-size: 30rpx;
+}
+
+.share-main-row2 {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100rpx;
+    padding: 0 30rpx 0 210rpx;
+    width: 100%;
+}
+
+.share-total {
+    color: #fff;
+    font-size: 44rpx;
+    line-height: 40rpx;
+}
+
+.share-tip {
+    color: hsla(0,0%,100%,.7);
+    font-size: 24rpx;
+    line-height: 36rpx;
+}
+
+.share-btn {
+    background: #fff;
+    border-radius: 76rpx;
+    color: #fd5701;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    text-align: center;
+    width: 200rpx;
+}
+
+.log-title {
+    color: #333;
+    font-size: 30rpx;
+    margin-top: 420rpx;
+    padding: 30rpx 0 0 30rpx;
+}
+
+.log-item {
+    align-items: center;
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 4px 4px 10px 0 hsla(0,0%,84%,.5);
+    display: flex;
+    height: 130rpx;
+    justify-content: space-between;
+    margin: 30rpx;
+    padding: 0 30rpx;
+    position: relative;
+    width: 630rpx;
+}
+
+.log-status {
+    background: linear-gradient(-45deg,#fe3f03,#ff9501);
+    border-radius: 0 10rpx 0 10rpx;
+    color: #fff;
+    font-size: 20rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 120rpx;
+}
+
+.log-left {
+    align-items: center;
+    display: flex;
+}
+
+.log-avatar {
+    background: #f8f8f8;
+    border-radius: 50rpx;
+    height: 50rpx;
+    margin-right: 10rpx;
+    width: 50rpx;
+}
+
+.log-no {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.log-time {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.log-right {
+    color: #1dc4ab;
+    font-size: 30rpx;
+}
+
+.share-code {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 480rpx;
+    z-index: 300;
+}
+
+.share-code image {
+    background: #f8f8f8;
+    box-sizing: border-box;
+    height: 480rpx;
+    margin-top: 100rpx;
+    width: 480rpx;
+}
+
+.share-code-btn {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 440rpx;
+}
+
+.share-code-btn button,.share-code-btn view {
+    background: #fff;
+    border: 1px solid #fd5701;
+    border-radius: 60rpx;
+    box-sizing: border-box;
+    color: #fd5701;
+    font-size: 28rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 40rpx 0;
+    text-align: center;
+    width: 200rpx;
+}
+
+.share-code-btn button.on {
+    background: linear-gradient(-45deg,#fe3f03,#ff9501);
+    border: none;
+    color: #fff;
+}

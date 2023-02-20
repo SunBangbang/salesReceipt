@@ -1,0 +1,23 @@
+<view class="nav">
+    <view bindtap="changeNav" class="{{navIdx==1?'on':''}}" data-type="1">买书</view>
+    <view bindtap="changeNav" class="{{navIdx==2?'on':''}}" data-type="2">卖书</view>
+    <view bindtap="changeNav" class="{{navIdx==3?'on':''}}" data-type="3">商城推广</view>
+    <view bindtap="changeNav" class="{{navIdx==4?'on':''}}" data-type="4">回收推广</view>
+    <view bindtap="changeNav" class="{{navIdx==5?'on':''}}" data-type="5">提现</view>
+    <view bindtap="changeNav" class="{{navIdx==6?'on':''}}" data-type="6">退款</view>
+</view>
+<view hidden="{{list.length>0}}">
+    <empty img="https://mini.cainiaoshoushu.com/face/img/empty-log.png" tip="暂无该项明细"></empty>
+</view>
+<view class="log-list" hidden="{{list.length==0}}">
+    <view class="log-item" style="border: {{index==0?'none':''}}" wx:for="{{list}}" wx:key="index">
+        <view>
+            <view class="type">{{item.note}}</view>
+            <view class="time">{{item.createdAt}}</view>
+        </view>
+        <view class="money">￥ {{item.amount}}</view>
+    </view>
+</view>
+<view class="loading-main" hidden="{{!showLoading}}">
+    <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+</view>

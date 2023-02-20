@@ -1,0 +1,260 @@
+page {
+    background: #f8f8f8;
+    box-shadow: inset 0 2px 8px 0 hsla(0,0%,79%,.5);
+    box-sizing: border-box;
+    min-height: 100%;
+    padding-bottom: 170rpx;
+    padding-top: 30rpx;
+}
+
+.address-container {
+    align-items: center;
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 4px 4px 10px 0 hsla(0,0%,84%,.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 30rpx 30rpx;
+    min-height: 180rpx;
+    padding: 0 30rpx;
+    width: 690rpx;
+}
+
+.address-icon {
+    height: 60rpx;
+    margin-right: 30rpx;
+    width: 60rpx;
+}
+
+.address-main {
+    width: 430rpx;
+}
+
+.address-user {
+    color: #333;
+    font-size: 34rpx;
+}
+
+.address-user text {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.address-detail {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.address-arrow {
+    height: 20rpx;
+    margin-left: 98rpx;
+    width: 12rpx;
+}
+
+.book-item {
+    border-bottom: 1px solid #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+    width: 100%;
+}
+
+.book-item-img {
+    background: #999;
+    border-radius: 8rpx;
+    height: 126rpx;
+    width: 96rpx;
+}
+
+.book-item-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 500rpx;
+}
+
+.book-item-name {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.book-item-author {
+    color: #b5b5b5;
+    font-size: 24rpx;
+}
+
+.deliver-time {
+    color: #ffc15b;
+    font-size: 28rpx;
+    margin: 20rpx 0;
+}
+
+.deliver-type {
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+    width: 100%;
+}
+
+.deliver-type text {
+    color: #b5b5b5;
+    margin-left: 10rpx;
+}
+
+.deliver-type-right {
+    align-items: center;
+    display: flex;
+}
+
+.deliver-type-right image {
+    height: 20rpx;
+    margin-left: 10rpx;
+    width: 12rpx;
+}
+
+.total-calc {
+    color: #333;
+    font-size: 30rpx;
+    padding: 20rpx 0 30rpx;
+    text-align: right;
+    width: 100%;
+}
+
+.order-remark {
+    color: #333;
+    font-size: 28rpx;
+    justify-content: space-between;
+    min-height: 100rpx;
+}
+
+.order-remark input {
+    color: #999;
+    width: 500rpx;
+}
+
+.submit-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    bottom: 50rpx;
+    color: #fff;
+    font-size: 34rpx;
+    height: 70rpx;
+    left: 30rpx;
+    line-height: 70rpx;
+    position: fixed;
+    text-align: center;
+    width: 690rpx;
+}
+
+.deliver-pop {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 560rpx;
+    z-index: 300;
+}
+
+.deliver-img {
+    height: 320rpx;
+    margin-top: -120rpx;
+    width: 320rpx;
+}
+
+.deliver-title {
+    color: #333;
+    font-size: 30rpx;
+}
+
+.deliver-tip {
+    color: #999;
+    font-size: 26rpx;
+    padding: 20rpx 0;
+}
+
+.deliver-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 34rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 30rpx 0 50rpx;
+    text-align: center;
+    width: 200rpx;
+}
+
+.service-pop {
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 100rpx;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.service-pop-title {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+    line-height: 120rpx;
+    text-align: center;
+}
+
+.service-pop-subtitle {
+    color: #333;
+    font-size: 28rpx;
+    padding: 0 0 10rpx 30rpx;
+}
+
+.service-pop-desc {
+    color: #666;
+    font-size: 24rpx;
+    margin-bottom: 10rpx;
+    padding: 0 30rpx;
+}
+
+.service-pop-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 34rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 50rpx 30rpx 0;
+    text-align: center;
+    width: 690rpx;
+}
+
+.lin-enter-active-class,.lin-leave-active-class {
+    bottom: 0;
+}
+
+.lin-enter-class,.lin-leave-to-class {
+    bottom: -100%;
+}
+
+.coupon-pop-item {
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+    padding: 0 30rpx;
+}
+
+.coupon-pop-item image {
+    height: 40rpx;
+    width: 40rpx;
+}

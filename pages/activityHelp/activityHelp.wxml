@@ -1,0 +1,35 @@
+<view class="banner">
+    <image bindtap="showRule" src="/images/activity-banner.png"></image>
+</view>
+<view class="box">
+    <image class="box-title" src="/images/activity-title.png"></image>
+    <view class="progress">
+        <view class="progress-tip" hidden="{{isJoin!==0||helpId}}">您还未报名，戳【我也要券】马上参与</view>
+        <view class="progress-tip" hidden="{{isJoin!==1||helpId}}">已有<text>{{doNum}}位</text>好友助力，还差<text>{{undoNum}}位</text>立即激活礼券</view>
+        <view class="progress-tip" hidden="{{isJoin!==2||helpId}}">激活成功，马上下单享好券</view>
+        <view class="progress-tip" hidden="{{!helpId||isHelp}}">您的好友{{helpName}}邀您帮Ta助力</view>
+        <view class="progress-tip" hidden="{{!helpId||!isHelp}}">您已为好友{{helpName}}成功助力</view>
+        <image class="progress-emo" hidden="{{!helpId||isHelp}}" src="/images/activity-unhelp.png"></image>
+        <image class="progress-emo" hidden="{{!helpId||!isHelp}}" src="/images/activity-help.png"></image>
+        <view class="progress-bar" hidden="{{isJoin==0||helpId}}">
+            <view class="progress-bar-inner" style="width:{{width}}"></view>
+        </view>
+        <view class="progress-list" hidden="{{isJoin==0||helpId}}">
+            <image class="progress-item-on" src="{{item.favatar}}" wx:for="{{helpList}}" wx:key="index"></image>
+            <view class="progress-item" wx:for="{{needList}}" wx:key="index">?</view>
+        </view>
+        <view class="progress-btn">
+            <view bindtap="joinActivity" class="progress-btn1" hidden="{{isJoin!==0||helpId}}">我也要券</view>
+            <button class="progress-btn2" hidden="{{isJoin!==1||helpId}}" openType="share" plain="true">邀Ta助力</button>
+            <view bindtap="helpActivity" class="progress-btn2" hidden="{{!helpId}}">帮Ta助力</view>
+        </view>
+    </view>
+</view>
+<view class="mask" hidden="{{!isTip}}"></view>
+<view class="apply" hidden="{{!isTip}}">
+    <view class="apply-tip">· 每人仅有一次参加助力活动的机会</view>
+    <view class="apply-tip">· 每人仅有一次为他人助力的机会</view>
+    <view class="apply-tip">· 邀请 <text style="color: #ff3a3a;">5</text> 人完成助力，即可获得礼券</view>
+    <view class="apply-tip">· 助力成功后，可在<text style="color: #ff3a3a;">【优惠多多】</text>页面查看礼券的具体使用方式</view>
+    <view bindtap="closePop" class="apply-tip-btn">好的</view>
+</view>

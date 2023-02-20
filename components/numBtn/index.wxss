@@ -1,0 +1,20 @@
+.num-btn {
+    align-items: center;
+    display: flex;
+}
+
+.num-btn-img {
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.num-btn-text {
+    background: #f5f5f5;
+    color: #333;
+    font-size: 28rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin: 0 4rpx;
+    min-width: 50rpx;
+    text-align: center;
+}

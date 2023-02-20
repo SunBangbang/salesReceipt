@@ -1,0 +1,133 @@
+<view class="{{isPop?'page':''}}">
+    <swiper class="banner" indicatorActiveColor="#1DC4AB" indicatorColor="rgba(29, 196, 171, 0.3)" indicatorDots="{{true}}">
+        <swiper-item class="banner-item" wx:for="{{imgList}}" wx:key="index">
+            <image class="banner-img" mode="aspectFill" src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="main" style="background: #fff;padding-top: 20rpx">
+        <view class="sales">
+            <view>已有 <text>{{salesNum}}</text> 位小伙伴买了这本书</view>
+            <button catchtap="share" class="share-btn" openType="share" plain="true">
+                <image src="/images/icon-share.png"></image>
+            </button>
+        </view>
+        <view class="name">{{name}}</view>
+        <view class="price">
+         <view class="money">￥{{sellPrice}}</view> 
+            <view class="discount">二手{{discount}}折</view> 
+        </view>
+        <view class="info">
+            <view>定价：<text>￥{{price}}</text>
+            </view>
+            <view>作者：<text style="color:#1DC4AB">{{author}}</text>
+            </view>
+            <view>出版社：<text>{{press}}</text>
+            </view>
+            <view>编码：<text>{{isbn}}</text>
+            </view>
+        </view>
+        <view bindtap="showService" class="service">
+            <image class="service-prise" src="/images/icon-prise.png"></image>
+            <view style="width: 628rpx">正版保证<text style="margin: 0 30rpx">·</text>消毒翻新<text style="margin: 0 30rpx">·</text>书费抵扣</view>
+            <image class="service-arrow" src="/images/arrow-right.png"></image>
+        </view>
+    </view>
+    <view bindtap="goShare" class="ad-banner">
+        <image mode="widthFix" src="https://mini.cainiaoshoushu.com/face/img/share-banner.jpg"></image>
+    </view>
+    <view class="detail">
+        <view class="detail-title">书籍详情</view>
+        <view class="detail-main" style="height: {{isMore?'auto':'230rpx'}}">
+            <rich-text nodes="{{details}}"></rich-text>
+        </view>
+        <view bindtap="lookMore" class="detail-more">
+            <view>{{isMore?'收起':'查看更多'}}</view>
+            <image src="/images/arrow-down.png" style="transform: {{isMore?'rotate(180deg)':''}}"></image>
+        </view>
+    </view>
+    <view class="about-title">相关推荐</view>
+    <view class="about-list">
+        <book-item data="{{item}}" isWater="{{false}}" wx:for="{{list}}" wx:key="index"></book-item>
+    </view>
+    <view class="loading-main" hidden="{{!showLoading}}">
+        <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+    </view>
+    <top showTop="{{isTop}}"></top>
+    <view class="book-footer">
+        <image bindtap="goStore" src="/images/footer-1-1.png"></image>
+        <view bindtap="goShopCart">
+            <l-badge shape="circle" show="{{cartNum>0}}" value="{{cartNum}}">
+                <image src="/images/footer-3-1.png"></image>
+            </l-badge>
+        </view>
+        <view bindtap="showCart" class="book-footer-btn {{totalNum>0?'':'cart-pop-empty-btn'}}">{{totalNum>0?'加入购物车':'掌柜补货中'}}</view>
+    </view>
+</view>
+<view bindtap="closePop" class="mask" hidden="{{!isPop}}"></view>
+<l-transition lClass="service-pop" lEnterActiveClass="lin-enter-active-class" lEnterClass="lin-enter-class" lLeaveActiveClass="lin-leave-active-class" lLeaveToClass="lin-leave-to-class" name="fade-up" show="{{showService}}">
+    <view>
+        <view class="service-pop-title">服务</view>
+        <view class="service-pop-subtitle">
+            <image src="/images/icon-prise.png"></image>
+            <view>正版保证</view>
+        </view>
+        <view class="service-pop-desc">商城所有书籍均为正版书籍，品质有保证</view>
+        <view class="service-pop-subtitle">
+            <image src="/images/icon-prise.png"></image>
+            <view>消毒翻新</view>
+        </view>
+        <view class="service-pop-desc">平台对回收的书籍会进行严格的翻新、修复和消毒</view>
+        <view class="service-pop-subtitle">
+            <image src="/images/icon-prise.png"></image>
+            <view>书费抵扣</view>
+        </view>
+        <view class="service-pop-desc">卖书获取书费，买书时享受双重折扣</view>
+        <view bindtap="closePop" class="service-pop-btn">知道了</view>
+    </view>
+</l-transition>
+<l-transition lClass="cart-pop" lEnterActiveClass="lin-enter-active-class" lEnterClass="lin-enter-class" lLeaveActiveClass="lin-leave-active-class" lLeaveToClass="lin-leave-to-class" name="" show="{{showCart}}">
+    <view>
+        <view class="cart-pop-info">
+            <image class="cart-pop-img" mode="aspectFill" src="{{img}}"></image>
+            <view class="cart-pop-price">￥{{sellPrice}}</view>
+            <image bindtap="closePop" class="cart-pop-close" src="/images/icon-pop-close.png"></image>
+        </view>
+        <view class="cart-pop-service">
+            <view class="cart-pop-service-left">
+                <image src="/images/icon-prise2.png"></image>
+                <view>服务保障</view>
+            </view>
+            <view class="cart-pop-service-right">正版保证 · 消毒翻新 · 书费抵扣</view>
+        </view>
+        <view class="cart-pop-level">
+            <view class="cart-pop-level-title">
+                <view>品相分类</view>
+                <view bindtap="showLevel" class="cart-pop-level-title-right">
+                    <view>不同品相有什么区别</view>
+                    <image src="/images/arrow-right2.png"></image>
+                </view>
+            </view>
+            <view class="cart-pop-level-btn">
+                <view bindtap="chooseLevel" class="{{idx==index?'on':''}}" data-idx="{{index}}" wx:for="{{typeList}}" wx:key="index">{{item.subtitle}}</view>
+            </view>
+        </view>
+        <view class="cart-pop-num">
+            <view class="cart-pop-num-left">购买数量<text>库存{{totalNum}}件</text>
+            </view>
+            <num-btn bind:changeNum="changeNum" num="{{num}}" totalNum="{{totalNum}}"></num-btn>
+        </view>
+        <view bindtap="addCart" class="cart-pop-btn {{totalNum>0?'':'cart-pop-empty-btn'}}">{{totalNum>0?'确定':'掌柜补货中'}}</view>
+    </view>
+</l-transition>
+<l-transition lClass="service-pop" lEnterActiveClass="lin-enter-active-class" lEnterClass="lin-enter-class" lLeaveActiveClass="lin-leave-active-class" lLeaveToClass="lin-leave-to-class" name="" show="{{showLevel}}">
+    <view>
+        <view class="service-pop-title">品相说明</view>
+        <view class="service-pop-subtitle">全新品相</view>
+        <view class="service-pop-desc" style="padding-left: 30rpx">书籍为牛卖回收的全新书籍</view>
+        <view class="service-pop-subtitle">良好品相</view>
+        <view class="service-pop-desc" style="padding-left: 30rpx">书籍为9成新左右、有极少笔记、无破损、阅读体验接近新书</view>
+        <view class="service-pop-subtitle">一般品相</view>
+        <view class="service-pop-desc" style="padding-left: 30rpx">书籍为7-8成新左右、有笔记和使用痕迹、不影响阅读</view>
+        <view bindtap="closePop" class="service-pop-btn">知道了</view>
+    </view>
+</l-transition>

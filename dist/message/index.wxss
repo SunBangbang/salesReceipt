@@ -1,0 +1,39 @@
+.i-message {
+    background: #2d8cf0;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    left: 0;
+    line-height: 2.3;
+    min-height: 32px;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    -webkit-transform: translateZ(0) translateY(-100%);
+    transition: all .4s ease-in-out;
+    width: 100%;
+    z-index: 1010;
+}
+
+.i-message-show {
+    opacity: 1;
+    -webkit-transform: translateZ(0) translateY(0);
+}
+
+.i-message-default {
+    background: #2d8cf0;
+}
+
+.i-message-success {
+    background: #19be6b;
+}
+
+.i-message-warning {
+    background: #f90;
+}
+
+.i-message-error {
+    background: #ed3f14;
+}

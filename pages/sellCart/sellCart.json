@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "卖书给牛卖收书",
+    "usingComponents": {
+        "num-btn": "/components/numBtn/index"
+    }
+}

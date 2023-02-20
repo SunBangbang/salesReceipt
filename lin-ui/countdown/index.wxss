@@ -1,0 +1,13 @@
+.l-countdown {
+    font-size: 28rpx;
+}
+
+.l-countdown-item {
+    color: inherit;
+    display: inline-block;
+}
+
+.l-countdown-time {
+    color: #1dc4ab;
+    margin: 0 16rpx;
+}

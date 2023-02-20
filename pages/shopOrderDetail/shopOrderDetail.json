@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "l-steps": "/lin-ui/steps/index",
+        "l-step": "/lin-ui/step/index",
+        "pay-box": "/components/payBox/index"
+    },
+    "navigationBarTitleText": "买书订单详情"
+}

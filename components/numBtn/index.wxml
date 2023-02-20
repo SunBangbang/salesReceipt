@@ -1,0 +1,5 @@
+<view class="num-btn">
+    <image catchtap="changeNum" class="num-btn-img" data-type="cut" src="/images/icon-cut.png"></image>
+    <view class="num-btn-text">{{num}}</view>
+    <image catchtap="changeNum" class="num-btn-img" data-type="add" src="/images/icon-add.png"></image>
+</view>

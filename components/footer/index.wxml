@@ -1,0 +1,8 @@
+<view class="footer">
+    <view bindtap="goNav" class="footer-item {{idx==index?'on':''}}" data-idx="{{index}}" data-url="{{item.url}}" wx:for="{{navList}}" wx:key="index">
+        <l-badge shape="circle" show="{{index==2&&cartNum>0}}" value="{{cartNum}}">
+            <image class="footer-icon" src="{{idx==index?item.icon2:item.icon1}}"></image>
+        </l-badge>
+        <view>{{item.name}}</view>
+    </view>
+</view>

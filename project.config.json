@@ -1,0 +1,102 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.19.6",
+  "appid": "wxfe5dff908b013e05",
+  "projectname": "miniprogram-1",
+  "cloudfunctionTemplateRoot": "",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/search",
+          "pathName": "pages/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myUpload",
+          "pathName": "pages/myUpload",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tips",
+          "pathName": "pages/tips",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/hot",
+          "pathName": "pages/hot",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/designer",
+          "pathName": "pages/designer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/store/store",
+          "pathName": "pages/store/store",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}

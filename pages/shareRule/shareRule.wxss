@@ -1,0 +1,19 @@
+page {
+    background: #f8f8f8;
+    box-shadow: inset 0 2px 8px 0 hsla(0,0%,79%,.5);
+    box-sizing: border-box;
+    height: 100%;
+    padding: 30rpx 30rpx 0;
+}
+
+.title {
+    font-size: 30rpx;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+
+.info {
+    font-size: 24rpx;
+    line-height: 40rpx;
+    margin-bottom: 10rpx;
+}

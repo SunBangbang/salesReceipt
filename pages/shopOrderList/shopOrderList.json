@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "买书订单",
+    "usingComponents": {
+        "empty": "/components/empty/index",
+        "l-steps": "/lin-ui/steps/index",
+        "l-step": "/lin-ui/step/index",
+        "i-load-more": "/dist/load-more/index",
+        "pay-box": "/components/payBox/index"
+    },
+    "onReachBottomDistance": 50
+}

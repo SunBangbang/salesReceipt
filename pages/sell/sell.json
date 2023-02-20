@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "卖书给牛卖收书",
+    "usingComponents": {
+        "footer": "/components/footer/index"
+    }
+}

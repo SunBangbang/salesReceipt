@@ -1,0 +1,12 @@
+.empty-main {
+    align-items: center;
+    color: #b5c8dc;
+    display: flex;
+    flex-direction: column;
+    font-size: 24rpx;
+}
+
+.empty-img {
+    height: 500rpx;
+    width: 500rpx;
+}

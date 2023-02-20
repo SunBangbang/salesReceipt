@@ -1,0 +1,73 @@
+<i-message id="message"></i-message>
+<view class="address-container">
+    <view class="address-title">填写发件人信息</view>
+    <view class="address-user-info">
+        <view class="address-user-key">姓名</view>
+        <input bindblur="getInfo" bindinput="getInfo" class="address-user-value" data-key="name" placeholder="请填写姓名" placeholderStyle="color:#b2b2b2" type="text" value="{{name}}"></input>
+    </view>
+    <view class="address-user-info">
+        <view class="address-user-key">手机</view>
+        <input bindblur="getInfo" bindinput="getInfo" class="address-user-value" data-key="phone" maxlength="11" placeholder="请填写手机" placeholderStyle="color:#b2b2b2" type="number" value="{{phone}}"></input>
+    </view>
+    <view class="address-user-info">
+        <view class="address-user-key">地址</view>
+        <picker bindchange="bindPickerChange" class="address-user-value" mode="region" value="{{address}}">
+            <view style="color: {{isEmpty?'#b2b2b2':''}}"> {{isEmpty?'请选择省-市-区':address}} </view>
+        </picker>
+    </view>
+    <view class="address-user-info" style="border: none;">
+        <view class="address-user-key" style="color:#fff;">详情</view>
+        <textarea bindblur="getInfo" class="address-user-value" data-key="detail" placeholder="请填写详细地址" placeholderStyle="color:#b2b2b2" value="{{detail}}"></textarea>
+    </view>
+</view>
+<view class="address-container">
+    <view class="address-title">共{{totalNum}}本</view>
+    <view class="book-item" wx:for="{{list}}" wx:key="index">
+        <image class="book-item-img" mode="aspectFill" src="{{item.faceUrl}}"></image>
+        <view>
+            <view class="book-item-info">
+                <view class="book-item-name" style="width:350rpx;">{{item.name}}</view>
+                <view class="book-item-name">￥{{item.oldPrice}}</view>
+            </view>
+            <view class="book-item-info">
+                <view class="book-item-author" style="width:350rpx;">{{item.author}}</view>
+                <view class="book-item-author">×{{item.num}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="showCoupon" class="deliver-type" hidden="{{couponList.length==0}}">
+        <view>{{couponName}}</view>
+        <view hidden="{{!couponMoney}}" style="color: #ed5c3e;margin-left: 10rpx;">+{{couponMoney}}</view>
+        <image src="/images/arrow-right.png"></image>
+    </view>
+    <view class="total-money">
+        <text style="color: #b5b5b5; font-size:24rpx">共 {{totalNum}} 件</text> 预估可卖 <text>￥{{totalMoney}}</text>
+    </view>
+</view>
+<view class="user-agree">
+    <view bindtap="agree" class="user-agree-btn">
+        <image hidden="{{isAgree}}" src="/images/icon-disagree.png"></image>
+        <image hidden="{{!isAgree}}" src="/images/icon-agree.png"></image>
+        <view>我已阅读并同意</view>
+    </view>
+    <view bindtap="goAgreement">《用户协议》</view>
+</view>
+<view bindtap="createOrder" class="submit-btn" style="background:{{isReady?'':'#c4c4c4'}}">{{isReady?'提交订单':'提交中'}}</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<view class="sell-warn" hidden="{{!isTip}}">
+    <image class="sell-warn-img" src="/images/sell-warn.png"></image>
+    <view class="sell-warn-title">温馨提示</view>
+    <view class="sell-warn-tip">亲，由于已经进入毕业卖书旺季，快递小哥取件包裹量增多，为了避免快递小哥将您的书籍遗漏或与其他同学的书籍混装，在此，<text style="color:#ED5C3E;font-weight:bold;">我们诚恳的建议您将书籍用袋子或纸箱打包好再交给快递小哥，</text>以免产生不必要的损失。</view>
+    <view bindtap="closePop" class="sell-warn-btn">好的</view>
+</view>
+<l-transition lClass="service-pop" lEnterActiveClass="lin-enter-active-class" lEnterClass="lin-enter-class" lLeaveActiveClass="lin-leave-active-class" lLeaveToClass="lin-leave-to-class" name="" show="{{showCoupon}}">
+    <view>
+        <view class="service-pop-title">惊喜好券</view>
+        <view bindtap="chooseCoupon" class="coupon-pop-item" data-item="{{item}}" wx:for="{{couponList}}" wx:key="index">
+            <view>{{item.name}} <text hidden="{{item.addPrice==0}}" style="color:#ED5C3E;">￥{{item.addPrice}}</text>
+            </view>
+            <image src="{{item.code==couponCode?'/images/icon-choosed2.png':'/images/icon-unchoosed.png'}}"></image>
+        </view>
+        <view bindtap="closePop2" class="service-pop-btn">完成</view>
+    </view>
+</l-transition>

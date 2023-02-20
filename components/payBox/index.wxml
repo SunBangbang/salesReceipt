@@ -1,0 +1,43 @@
+<l-transition lClass="service-pop" lEnterActiveClass="lin-enter-active-class" lEnterClass="lin-enter-class" lLeaveActiveClass="lin-leave-active-class" lLeaveToClass="lin-leave-to-class" name="fade-up" show="{{showPay}}">
+    <view>
+        <view class="service-pop-title">支付方式</view>
+        <view bindtap="choosePay" class="pay-pop-item" data-type="1">
+            <view class="pay-pop-left">
+                <image class="pay-pop-icon" src="/images/pay-type1.png"></image>
+                <view>微信支付</view>
+            </view>
+            <image class="pay-pop-right" src="{{payType==1?'/images/icon-choosed2.png':'/images/icon-unchoosed.png'}}"></image>
+        </view>
+        <view bindtap="choosePay" class="pay-pop-item" data-type="2" hidden="{{balance<price}}">
+            <view class="pay-pop-left">
+                <image class="pay-pop-icon" src="/images/pay-type2.png"></image>
+                <view>
+                    <view>余额支付<text style="color:#ED5C3E;font-size:24rpx;margin-left:10rpx">9折</text>
+                    </view>
+                    <view class="pay-pop-balance">余额 ￥{{balance}}</view>
+                </view>
+            </view>
+            <image class="pay-pop-right" src="{{payType==2?'/images/icon-choosed2.png':'/images/icon-unchoosed.png'}}"></image>
+        </view>
+        <view bindtap="confirmPay" class="service-pop-btn">{{payName}}</view>
+    </view>
+</l-transition>
+<view class="deliver-pop" hidden="{{!showPayTip}}">
+    <view class="deliver-title" style="padding:50rpx 0 20rpx 0">确认离开收银台？</view>
+    <view class="countdown-tip">
+        <view>您的订单将在</view>
+        <l-countdown format="{%h}:{%m}:{%s}" time="86400" timeType="second"></l-countdown>
+        <view>后被取消，</view>
+    </view>
+    <view class="countdown-tip">请尽快完成支付</view>
+    <view class="countdown-btn">
+        <view bindtap="closePay" class="countdown-btn-item" style="border-right:1px solid #e4e4e4">放弃支付</view>
+        <view bindtap="showPay" class="countdown-btn-item" style="color:#1DC4AB">继续支付</view>
+    </view>
+</view>
+<view class="success-pop" hidden="{{!showSuccessTip}}">
+    <image class="success-tip" src="/images/tip-success.png"></image>
+    <view class="deliver-title">订单支付成功</view>
+    <view class="countdown-tip" style="padding:20rpx">商家正在火速为您配货</view>
+    <view bindtap="completePay" class="deliver-btn">知道了</view>
+</view>

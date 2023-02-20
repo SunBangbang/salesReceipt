@@ -1,0 +1,35 @@
+<view class="main">
+    <search></search>
+</view>
+<view class="main" style="position:relative">
+    <view class="top">
+        <view bindtap="goTop" class="top-item">
+            <image class="top-img" src="/images/top-1.jpg"></image>
+            <view class="top-mask"></view>
+            <view class="top-name">畅销榜</view>
+        </view>
+        <view bindtap="goTop" class="top-item" data-type="2">
+            <image class="top-img" src="/images/top-2.jpg"></image>
+            <view class="top-mask"></view>
+            <view class="top-name">文学榜</view>
+        </view>
+        <view bindtap="goTop" class="top-item" data-type="3">
+            <image class="top-img" src="/images/top-3.jpg"></image>
+            <view class="top-mask"></view>
+            <view class="top-name">童书榜</view>
+        </view>
+        <view class="type-title">
+            <view class="type-line"></view>
+            <image bindtap="goTypeList" class="type-more" data-type="1" src="/images/type-more.png"></image>
+        </view>
+    </view>
+    <l-tabs animated="{{true}}" animatedForLine="{{true}}" bind:linchange="changeNav" placement="left">
+        <l-tabpanel key="{{item.id}}" slot="{{item.id}}" tab="{{item.name}}" wx:for="{{type}}" wx:key="index">
+            <view class="tab-content">
+                <view class="type-list">
+                    <view bindtap="goTypeList" class="type-item {{'type'+index+1}}" data-banner="{{each.picUrl}}" data-id="{{each.id}}" data-name="{{each.name}}" data-type="2" wx:for="{{item.childCategory}}" wx:for-index="idx" wx:for-item="each" wx:key="index">{{each.name}}</view>
+                </view>
+            </view>
+        </l-tabpanel>
+    </l-tabs>
+</view>

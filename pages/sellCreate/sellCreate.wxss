@@ -1,0 +1,240 @@
+page {
+    background: #f8f8f8;
+    box-shadow: inset 0 2px 8px 0 hsla(0,50%,98%,.5);
+    box-sizing: border-box;
+    min-height: 100%;
+    padding-bottom: 50rpx;
+    padding-top: 30rpx;
+}
+
+.address-container {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 4px 4px 10px 0 hsla(0,0%,84%,.5);
+    box-sizing: border-box;
+    margin: 0 30rpx 30rpx;
+    padding: 0 30rpx;
+    width: 690rpx;
+}
+
+.address-title {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.address-title,.address-user-info {
+    border-bottom: 1px solid #e4e4e4;
+    line-height: 100rpx;
+}
+
+.address-user-info {
+    align-items: center;
+    color: #000;
+    display: flex;
+    font-size: 34rpx;
+    justify-content: space-between;
+}
+
+.address-user-key {
+    width: 180rpx;
+}
+
+.address-user-value {
+    width: 450rpx;
+}
+
+textarea.address-user-value {
+    height: 130rpx;
+    line-height: 65rpx;
+    padding: 20rpx 0;
+}
+
+.book-item {
+    border-bottom: 1px solid #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+}
+
+.book-item-img {
+    border-radius: 8rpx;
+    height: 126rpx;
+    width: 96rpx;
+}
+
+.book-item-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 500rpx;
+}
+
+.book-item-name {
+    color: #333;
+    font-size: 28rpx;
+}
+
+.book-item-author {
+    color: #b5b5b5;
+    font-size: 24rpx;
+}
+
+.total-money {
+    color: #333;
+    font-size: 28rpx;
+    line-height: 100rpx;
+    text-align: right;
+}
+
+.total-money text {
+    color: #ed5c3e;
+    font-family: PingFangSC-Medium;
+}
+
+.user-agree {
+    color: #333;
+    font-size: 28rpx;
+    justify-content: center;
+    margin-top: 70rpx;
+    width: 100%;
+}
+
+.user-agree,.user-agree-btn {
+    align-items: center;
+    display: flex;
+}
+
+.user-agree-btn image {
+    height: 32rpx;
+    margin-right: 10rpx;
+    width: 32rpx;
+}
+
+.submit-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 36rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 30rpx 0 0 30rpx;
+    text-align: center;
+    width: 690rpx;
+}
+
+.sell-warn {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 560rpx;
+    z-index: 300;
+}
+
+.sell-warn-img {
+    height: 96rpx;
+    margin-top: 32rpx;
+    width: 86rpx;
+}
+
+.sell-warn-title {
+    color: #000;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    margin: 12rpx 0;
+}
+
+.sell-warn-tip {
+    color: #888;
+    font-size: 28rpx;
+    padding: 0 30rpx;
+}
+
+.sell-warn-btn {
+    border-top: 1px solid #e5e5e5;
+    color: #1dc4ab;
+    font-size: 36rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-top: 30rpx;
+    text-align: center;
+    width: 560rpx;
+}
+
+.deliver-type {
+    color: #333;
+    font-size: 28rpx;
+    justify-content: flex-end;
+    margin-top: 20rpx;
+    text-align: right;
+    width: 100%;
+}
+
+.deliver-type,.deliver-type-right {
+    align-items: center;
+    display: flex;
+}
+
+.deliver-type image {
+    height: 20rpx;
+    margin-left: 10rpx;
+    width: 12rpx;
+}
+
+.service-pop {
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 100rpx;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.service-pop-title {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+    line-height: 120rpx;
+    text-align: center;
+}
+
+.service-pop-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 34rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 50rpx 30rpx 0;
+    text-align: center;
+    width: 690rpx;
+}
+
+.lin-enter-active-class,.lin-leave-active-class {
+    bottom: 0;
+}
+
+.lin-enter-class,.lin-leave-to-class {
+    bottom: -100%;
+}
+
+.coupon-pop-item {
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-size: 28rpx;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+    padding: 0 30rpx;
+}
+
+.coupon-pop-item image {
+    height: 40rpx;
+    width: 40rpx;
+}

@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "book-item": "/components/bookWater/index",
+        "top": "/components/top/index",
+        "i-load-more": "/dist/load-more/index",
+        "l-transition": "/lin-ui/transition/index",
+        "num-btn": "/components/numBtn/index",
+        "l-badge": "/lin-ui/badge/index"
+    }
+}

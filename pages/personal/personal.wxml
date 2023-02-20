@@ -1,0 +1,165 @@
+<view class="{{isPop?'page':''}}">
+    <view class="user-info">
+        <image class="user-info-bg" src="https://mini.cainiaoshoushu.com/face/img/personal-bg.jpg"></image>
+        <view class="user-info-main">
+            <view class="user-info-top">
+                <view class="user-info-top-left">
+                    <view bindtap="getUserInfo" class="user-img-bg">
+                        <image class="user-img" src="{{faceUrl}}"></image>
+                    </view>
+                    <view bindtap="goNav" data-url="/pages/wallet/wallet">
+                        <view class="account-value">{{balance}}</view>
+                        <view class="account-key">账户余额</view>
+                    </view>
+                </view>
+                <view bindtap="goNav" class="user-info-top-right" data-url="/pages/activityHelp/activityHelp">助力赢好劵</view>
+            </view>
+            <view class="user-info-bottom">
+                <view bindtap="showOrder" class="user-info-item" data-type="1">
+                    <image src="/images/my-user-1.png"></image>
+                    <view>买书订单</view>
+                </view>
+                <view bindtap="showOrder" class="user-info-item" data-type="2">
+                    <image src="/images/my-user-2.png"></image>
+                    <view>卖书订单</view>
+                </view>
+                <view bindtap="goNav" class="user-info-item" data-url="/pages/coupon/coupon">
+                    <image src="/images/my-user-3.png"></image>
+                    <view>优惠多多</view>
+                </view>
+                <view class="user-info-item">
+                    <image bindtap="goNav" data-url="/pages/share/share" src="/images/my-user-4.png"></image>
+                    <view>推广达人</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="order-info" hidden="{{idx!=1}}">
+        <view bindtap="goShopOrderList" class="order-info-top" data-status="1">
+            <view>买书订单</view>
+            <image src="/images/arrow-right3.png"></image>
+        </view>
+        <view class="order-info-bottom">
+            <view bindtap="goShopOrderList" class="order-info-item" data-status="1">
+                <l-badge shape="circle" show="{{payNum>0}}" value="{{payNum}}">
+                    <image src="/images/my-order-1.png"></image>
+                </l-badge>
+                <view>待付款</view>
+            </view>
+            <view bindtap="goShopOrderList" class="order-info-item" data-status="2">
+                <l-badge shape="circle" show="{{deliverNum>0}}" value="{{deliverNum}}">
+                    <image src="/images/my-order-2.png"></image>
+                </l-badge>
+                <view>待发货</view>
+            </view>
+            <view bindtap="goShopOrderList" class="order-info-item" data-status="3">
+                <l-badge shape="circle" show="{{receiptNum>0}}" value="{{receiptNum}}">
+                    <image src="/images/my-order-3.png" style="width:52rpx"></image>
+                </l-badge>
+                <view>待收货</view>
+            </view>
+            <view bindtap="goShopOrderList" class="order-info-item" data-status="4">
+                <image src="/images/my-order-4.png"></image>
+                <view>已完成</view>
+            </view>
+            <view bindtap="goShopOrderList" class="order-info-item" data-status="5">
+                <image src="/images/my-order-5.png"></image>
+                <view>已取消</view>
+            </view>
+        </view>
+    </view>
+    <view class="order-info" hidden="{{idx!=2}}">
+        <view bindtap="goOrderList" class="order-info-top" data-status="">
+            <view>卖书订单</view>
+            <image src="/images/arrow-right3.png"></image>
+        </view>
+        <view class="order-info-bottom">
+            <view bindtap="goOrderList" class="order-info-item" data-status="100">
+                <l-badge shape="circle" show="{{preCheckNum>0}}" value="{{preCheckNum}}">
+                    <image src="/images/my-order-6.png"></image>
+                </l-badge>
+                <view>待预审</view>
+            </view>
+            <view bindtap="goOrderList" class="order-info-item" data-status="102">
+                <l-badge shape="circle" show="{{waitNum>0}}" value="{{waitNum}}">
+                    <image src="/images/my-order-7.png"></image>
+                </l-badge>
+                <view>待入库</view>
+            </view>
+            <view bindtap="goOrderList" class="order-info-item" data-status="103">
+                <l-badge shape="circle" show="{{checkNum>0}}" value="{{checkNum}}">
+                    <image src="/images/my-order-8.png"></image>
+                </l-badge>
+                <view>待审核</view>
+            </view>
+            <view bindtap="goOrderList" class="order-info-item" data-status="101105">
+                <image src="/images/my-order-9.png"></image>
+                <view>已完成</view>
+            </view>
+            <view bindtap="goOrderList" class="order-info-item" data-status="101105">
+                <image src="/images/my-order-10.png"></image>
+                <view>已取消</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="goNav" class="ad-banner" data-url="/pages/share/share">
+        <image mode="widthFix" src="https://mini.cainiaoshoushu.com/face/img/share-banner.jpg"></image>
+    </view>
+    <view class="other-info">
+        <view bindtap="goNav" class="other-info-item" data-url="/pages/addressList/addressList">
+            <view class="other-info-left">
+                <image src="/images/my-other-1.png"></image>
+                <view>地址管理</view>
+            </view>
+            <image class="other-info-right" src="/images/arrow-right3.png"></image>
+        </view>
+        <view bindtap="goNav" class="other-info-item" data-url="/pages/feedback/feedback">
+            <view class="other-info-left">
+                <image src="/images/my-other-2.png"></image>
+                <view>意见反馈</view>
+            </view>
+            <image class="other-info-right" src="/images/arrow-right3.png"></image>
+        </view>
+        <view bindtap="goNav" class="other-info-item" data-url="/pages/rule/rule">
+            <view class="other-info-left">
+                <image src="/images/my-other-3.png"></image>
+                <view>买卖答疑</view>
+            </view>
+            <image class="other-info-right" src="/images/arrow-right3.png"></image>
+        </view>
+        <view bindtap="goNav" class="other-info-item" data-url="/pages/agreement/agreement">
+            <view class="other-info-left">
+                <image src="/images/my-other-4.png"></image>
+                <view>用户协议</view>
+            </view>
+            <image class="other-info-right" src="/images/arrow-right3.png"></image>
+        </view>
+        <view bindtap="goNav" class="other-info-item" data-url="/pages/about/about">
+            <view class="other-info-left">
+                <image src="/images/my-other-5.png"></image>
+                <view>关于牛卖</view>
+            </view>
+            <image class="other-info-right" src="/images/arrow-right3.png"></image>
+        </view>
+        <view bindtap="clear" class="other-info-item" style="border: none;">
+            <view class="other-info-left">
+                <image src="/images/my-other-6.png"></image>
+                <view>清理缓存</view>
+            </view>
+            <view class="storage">{{storage}}</view>
+        </view>
+    </view>
+    <button bindcontact="handleContact" class="btn-serve" openType="contact" plain="true">
+        <image src="/images/service-btn.png"></image>
+    </button>
+    <footer idx="3"></footer>
+</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<view class="pop" hidden="{{!isPop}}">
+    <view class="pop-title">注意</view>
+    <view class="pop-tip">清理后，卖书列表将清空</view>
+    <view class="pop-btn">
+        <view bindtap="clearCancel" class="cancel-btn">取消</view>
+        <view bindtap="clearConfirm" class="confirm-btn">确定</view>
+    </view>
+</view>

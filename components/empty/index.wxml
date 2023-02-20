@@ -1,0 +1,4 @@
+<view class="empty-main">
+    <image class="empty-img" src="{{img}}"></image>
+    <view>{{tip}}</view>
+</view>

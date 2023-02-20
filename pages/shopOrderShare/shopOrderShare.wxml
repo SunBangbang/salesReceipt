@@ -1,0 +1,17 @@
+<view class="{{isPop?'page':''}}">
+    <view class="list">
+        <view bindtap="goBookDetail" class="item" data-id="{{item.spuId}}" style="border: {{index==0?'none':''}}" wx:for="{{shopList}}" wx:key="index">
+            <view class="item-left">
+                <image class="img" mode="aspectFill" src="{{item.images}}"></image>
+                <view class="item-info">
+                    <view>
+                        <view class="name">{{item.spu.name}}</view>
+                    </view>
+                    <view class="price">￥{{item.price}}</view>
+                </view>
+            </view>
+            <view catchtap="addCart" class="item-btn {{item.stock>0?item.isCheck?'item-btn-on':'':'item-btn-on'}}" data-idx="{{index}}" data-obj="{{item}}">{{item.stock>0?item.isCheck?'已加购':'马上抢':'补货中'}}</view>
+        </view>
+    </view>
+</view>
+<view bindtap="goCart" class="back-btn">返回购物车</view>

@@ -1,0 +1,128 @@
+page {
+    background: #f8f8f8;
+}
+
+.fx {
+    display: flex;
+}
+
+.banner {
+    height: 390rpx;
+    width: 100%;
+}
+
+.list {
+    margin-top: 30rpx;
+}
+
+.item {
+    background: #fff;
+    border-radius: 6rpx;
+    box-shadow: 4px 4px 10px 0 hsla(0,0%,84%,.5);
+    box-sizing: border-box;
+    display: flex;
+    height: 240rpx;
+    margin-bottom: 30rpx;
+    padding: 20rpx;
+    width: 100%;
+}
+
+.item,.item-img {
+    position: relative;
+}
+
+.item-img {
+    height: 200rpx;
+    margin-right: 20rpx;
+    width: 220rpx;
+}
+
+.item-img-mask1 {
+    background: hsla(0,0%,40%,.1);
+    height: 160rpx;
+    right: 0;
+    top: 20rpx;
+    width: 160rpx;
+}
+
+.item-img-mask1,.item-img-mask2 {
+    border-radius: 10rpx;
+    position: absolute;
+}
+
+.item-img-mask2 {
+    background: hsla(0,0%,40%,.15);
+    height: 180rpx;
+    right: 10rpx;
+    top: 10rpx;
+    width: 180rpx;
+}
+
+.item-img image {
+    background: #999;
+    border-radius: 10rpx;
+    height: 200rpx;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 200rpx;
+}
+
+.item-name {
+    color: #333;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 410rpx;
+}
+
+.item-author {
+    color: #b5b5b5;
+}
+
+.item-author,.item-press {
+    font-size: 24rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 410rpx;
+}
+
+.item-press {
+    color: #d5bc8b;
+}
+
+.item-price {
+    align-items: center;
+    display: flex;
+    margin-top: 40rpx;
+}
+
+.item-money {
+    color: #333;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    margin-right: 14rpx;
+}
+
+.item-discount {
+    border: 1px solid #ffcabf;
+    border-radius: 4rpx;
+    color: #ed5c3e;
+    font-size: 20rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    padding: 0 10rpx;
+    text-align: center;
+}
+
+.item-btn {
+    bottom: 20rpx;
+    height: 50rpx;
+    position: absolute;
+    right: 20rpx;
+    width: 50rpx;
+}

@@ -1,0 +1,13 @@
+<view bindtap="goBookDetail" class="book-item" data-id="{{item.id}}" style="padding-top:{{index===0?'0':''}};border-top:{{index===0?'none':''}}" wx:for="{{list}}" wx:key="index">
+    <image class="book-img" mode="aspectFill" src="{{item.url}}"></image>
+    <view class="book-info">
+        <view class="name">{{item.name}}</view>
+        <view class="author">{{item.author}}</view>
+        <view class="press">{{item.press}}</view>
+        <view class="price">
+            <view class="money">￥{{item.sellPrice}}</view>
+            <view class="discount">二手{{item.discount}}折</view>
+        </view>
+    </view>
+    <image class="book-btn" src="/images/icon-shopping.png"></image>
+</view>

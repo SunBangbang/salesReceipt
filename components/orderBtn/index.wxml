@@ -1,0 +1,6 @@
+<view class="order-btn-list">
+    <view bindtap="changeNav" class="order-btn-item {{nav==0?'on':''}}" data-idx="0">综合</view>
+    <view bindtap="changeNav" class="order-btn-item {{nav==4?'on':''}}" data-idx="4">销量</view>
+    <view bindtap="changeNav" class="order-btn-item {{nav==1?'on':''}}" data-idx="1">新品</view>
+    <view bindtap="changeNav" class="order-btn-item {{nav==3?'on':''}}" data-idx="3">价格</view>
+</view>

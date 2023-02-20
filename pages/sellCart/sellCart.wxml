@@ -1,0 +1,74 @@
+<view class="{{isPop?'page':''}}">
+    <view class="limit">
+        <image src="/images/sellcart-label.png"></image>
+        <view>旧书满5种且总数满{{limitNum}}本，即可下单~</view>
+    </view>
+    <view class="list">
+        <view class="item" wx:for="{{list}}" wx:key="index">
+            <image class="img" mode="aspectFill" src="{{item.faceUrl}}"></image>
+            <view class="item-info">
+                <view class="item-info-row">
+                    <view>
+                        <view class="name">{{item.name}}</view>
+                        <view class="author" style="max-width:400rpx;">{{item.author}}</view>
+                    </view>
+                    <view bindtap="deleteBook" class="item-close" data-index="{{index}}">删除</view>
+                </view>
+                <view class="item-info-row">
+                    <view class="name">预估可卖 <text>￥{{item.oldPrice}}</text>
+                    </view>
+                    <view hidden="{{item.libaryCode!='library_preferred'}}">
+                        <num-btn bind:changeNum="changeNum" data-idx="{{index}}" num="{{item.num}}" total="{{totalNum}}" totalNum="{{6}}"></num-btn>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="goRule" class="rule">
+            <view>卖书有疑问？</view>
+            <image src="/images/arrow-right3.png"></image>
+        </view>
+    </view>
+    <view class="sell-btn-box">
+        <view bindtap="inputCode" class="sell-btn-item">
+            <image src="/images/icon-edit.png"></image>
+            <view>输入ISBN</view>
+        </view>
+        <view bindtap="scanCode" class="sell-btn-item sell-btn-scan">
+            <image src="/images/icon-scan.png"></image>
+            <view>扫码卖书</view>
+        </view>
+    </view>
+    <view class="total-main">
+        <view class="total-main-left">{{totalNum}} 本预估可卖<text>￥{{totalMoney}}</text>
+        </view>
+        <view bindtap="doNext" class="total-main-right {{isNext?'on':''}}">下一步</view>
+    </view>
+</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<image bindtap="closePop" class="close-btn" hidden="{{!isClose}}" src="/images/icon-pop-close2.png"></image>
+<view class="sell-warn" hidden="{{!isWarn}}">
+    <image class="sell-warn-img" src="/images/sell-warn.png"></image>
+    <view class="sell-warn-title">重要提示</view>
+    <view class="sell-warn-tip">卖书前请务必仔细阅读</view>
+    <view class="sell-warn-tip">买卖答疑</view>
+    <view class="sell-warn-btn">
+        <view bindtap="goRule">查看答疑</view>
+        <view bindtap="startSell" class="sell-warn-sell">开始卖书</view>
+    </view>
+</view>
+<view class="sell-warn" hidden="{{!isScan}}">
+    <view class="sell-scan-title">抱歉</view>
+    <view class="sell-warn-tip">{{scanTip}}</view>
+    <view bindtap="scanCode" class="sell-scan-btn">扫描下一本</view>
+</view>
+<view class="sell-input" hidden="{{!isInput}}">
+    <view class="sell-input-title">手动输入条形码</view>
+    <view class="sell-input-tip">请输入不含"-"的13位ISBN编码</view>
+    <image class="sell-input-img" src="/images/code.png"></image>
+    <view class="sell-input-code">
+        <text wx:for="9787806486818" wx:key="index">{{item}}</text>
+    </view>
+    <input bindblur="getInfo" bindinput="getInfo" class="sell-input-value" maxlength="13" placeholder="在这里输入..." placeholderStyle="color:#888" type="number" value="{{code}}"></input>
+    <view class="sell-input-wrong">{{inputTip}}</view>
+    <view bindtap="confirmCode" class="sell-input-btn">确认</view>
+</view>

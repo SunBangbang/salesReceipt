@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "l-steps": "/lin-ui/steps/index",
+        "l-step": "/lin-ui/step/index"
+    },
+    "navigationBarTitleText": "卖书订单详情"
+}

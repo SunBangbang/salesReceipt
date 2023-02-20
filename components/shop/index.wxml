@@ -1,0 +1,1 @@
+<image bindtap="goShopCart" class="shop-btn" hidden="{{!showShop}}" src="/images/icon-shopping2.png"></image>

@@ -1,0 +1,11 @@
+<view class="title">分享规则</view>
+<view class="info">1、用户登录后，在个人中心的“推广达人”界面，点击“立即分享”按钮，保存或分享活动专属二维码，或点击任意页面右上角的“···”进行转发，推荐好友在牛卖收书卖书，可获得收益；</view>
+<view class="info">2、订单审核付款后，按照订单审核金额的10%计算推广收益，并自动发放至账户余额，用户可在个人中心页面点击“账户余额”，进入“我的钱包”界面进行提现；</view>
+<view class="info">3、推广收益只计算新用户首单；</view>
+<view class="info">4、收益统计及推广明细可在“推广达人”界面查看，详情请咨询客服。</view>
+<view class="title" style="margin-top:30rpx">哪些情况可能造成推广不成功？</view>
+<view class="info">1、推广用户分享二维码时，账号处于未登录状态；</view>
+<view class="info">2、受邀用户扫描二维码或点击分享卡片后，删除牛卖收书小程序；</view>
+<view class="info">3、受邀用户扫描二维码或点击分享卡片后，扫描或点击其他推广用户的二维码，以最终结果为准；</view>
+<view class="info">4、受邀用户不属于新用户首单的情况。</view>
+<view class="info" style="font-weight:bold">注：除第4种情况外，其他情况均可通过重新扫描进行推广。</view>

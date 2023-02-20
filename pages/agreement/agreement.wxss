@@ -1,0 +1,33 @@
+page {
+    background: #f8f8f8;
+    box-shadow: inset 0 2px 8px 0 hsla(0,0%,79%,.5);
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 0;
+}
+
+.question {
+    color: #333;
+    font-size: 28rpx;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+}
+
+.answer {
+    color: #555;
+    font-size: 24rpx;
+    margin-bottom: 30rpx;
+}
+
+.answer-2 {
+    text-indent: 2em;
+}
+
+.answer-2,.answer-3 {
+    color: #555;
+    font-size: 24rpx;
+    margin-bottom: 15rpx;
+}
+
+.answer-3 {
+    text-indent: 4em;
+}

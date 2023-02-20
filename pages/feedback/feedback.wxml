@@ -1,0 +1,38 @@
+<i-message id="message"></i-message>
+<view class="{{isPop?'page':''}}">
+    <view class="main">
+        <picker bindchange="getType" class="type" range="{{type}}" rangeKey="dictLabel" value="{{index}}">
+            <view>{{isEmpty?'反馈类型':type[index].dictLabel}}</view>
+            <image class="type-arrow" src="/images/arrow-right3.png"></image>
+        </picker>
+    </view>
+    <view class="main">
+        <view class="word-title">反馈说明</view>
+        <view class="word-main">
+            <textarea bindinput="getText" maxlength="100" placeholder="请输入您的建议与意见" placeholderStyle="color:#b5b5b5"></textarea>
+            <view class="word-length">{{len}} / 100</view>
+        </view>
+    </view>
+    <view class="main" style="padding-bottom: 50rpx;">
+        <view class="word-title">上传凭证</view>
+        <view class="img-list">
+            <view class="img-item" wx:for="{{img}}" wx:key="index">
+                <image bindtap="showImg" class="img-main" data-img="{{item}}" mode="aspectFill" src="{{item}}"></image>
+                <image bindtap="deleteImg" class="img-close" data-idx="{{index}}" src="/images/icon-delete2.png"></image>
+            </view>
+            <view bindtap="getImg" class="add-btn" hidden="{{img.length==3}}">
+                <image class="icon-camera" src="/images/icon-camera.png"></image>
+                <view>上传凭证</view>
+                <view>(最多3张)</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="getSubmit" class="submit-btn">提交</view>
+</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<view class="success-pop" hidden="{{!isPop}}">
+    <image class="success-tip" src="/images/tip-success.png"></image>
+    <view class="deliver-title">反馈提交成功</view>
+    <view class="countdown-tip" style="padding:20rpx">我们将尽快处理，感谢分享</view>
+    <view bindtap="closePop" class="deliver-btn">知道了</view>
+</view>

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "搜索",
+    "usingComponents": {
+        "order-btn": "/components/orderBtn/index",
+        "book": "/components/book/index",
+        "shop": "/components/shop/index",
+        "top": "/components/top/index",
+        "empty": "/components/empty/index",
+        "i-load-more": "/dist/load-more/index"
+    },
+    "onReachBottomDistance": 50
+}

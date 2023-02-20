@@ -1,0 +1,35 @@
+<i-message id="message"></i-message>
+<view class="{{isPop?'page':''}}">
+    <view class="address-container">
+        <view class="address-user-info">
+            <view class="address-user-key">姓名</view>
+            <input bindblur="getInfo" bindinput="getInfo" class="address-user-value" data-key="name" placeholder="请填写姓名" placeholderStyle="color:#b2b2b2" type="text" value="{{name}}"></input>
+        </view>
+        <view class="address-user-info">
+            <view class="address-user-key">手机</view>
+            <input bindblur="getInfo" bindinput="getInfo" class="address-user-value" data-key="phone" maxlength="11" placeholder="请填写手机" placeholderStyle="color:#b2b2b2" type="number" value="{{phone}}"></input>
+        </view>
+        <view class="address-user-info" style="justify-content:flex-start">
+            <view class="address-user-key">地址</view>
+            <picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" mode="multiSelector" range="{{addressList}}" rangeKey="name" value="{{value}}">
+                <view style="color: {{isEmpty?'#b2b2b2':''}}"> {{isEmpty?'请选择省-市-区':address}} </view>
+            </picker>
+        </view>
+        <view class="address-user-info">
+            <view class="address-user-key">详细地址</view>
+            <textarea bindblur="getInfo" class="address-user-value" data-key="detail" placeholder="请填写详细地址" placeholderStyle="color:#b2b2b2" value="{{detail}}"></textarea>
+        </view>
+        <view class="address-user-info" style="border: none;">
+            <view class="address-user-key">默认地址</view>
+            <i-switch bind:change="bindSwitchChange" slot="footer" value="{{isDefault}}"></i-switch>
+        </view>
+    </view>
+    <view bindtap="save" class="save-btn">保存</view>
+</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<view class="success-pop" hidden="{{!isPop}}">
+    <image class="success-tip" src="/images/tip-success.png"></image>
+    <view class="deliver-title">信息提交成功</view>
+    <view class="countdown-tip" style="padding:20rpx">快来买买买~</view>
+    <view bindtap="closePop" class="deliver-btn">好的</view>
+</view>

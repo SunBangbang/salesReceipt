@@ -1,0 +1,7 @@
+.shop-btn {
+    bottom: 400rpx;
+    height: 80rpx;
+    position: fixed;
+    right: 30rpx;
+    width: 80rpx;
+}

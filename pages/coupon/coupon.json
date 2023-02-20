@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "优惠券",
+    "usingComponents": {
+        "empty": "/components/empty/index",
+        "i-load-more": "/dist/load-more/index"
+    },
+    "onReachBottomDistance": 50
+}

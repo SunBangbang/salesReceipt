@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "empty": "/components/empty/index",
+        "i-load-more": "/dist/load-more/index"
+    },
+    "navigationBarTitleText": "账户明细",
+    "onReachBottomDistance": 50
+}

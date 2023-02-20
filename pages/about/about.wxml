@@ -1,0 +1,15 @@
+<view class="fx">
+    <image class="banner" src="https://mini.cainiaoshoushu.com/face/img/newest-banner.jpg"></image>
+</view>
+<view class="about">
+    <view>脚步无法丈量的地方，书籍可以</view>
+    <view>您暂且搁置的好书，也许Ta正需要</view>
+    <view>
+        <text style="color: #1dc4ab">牛卖收书，</text>专注书籍循环利用</view>
+    <view>在这里，每一本书都是</view>
+    <view>匆匆来去的过客</view>
+    <view>买书，请到这里来</view>
+    <view>卖书，还到这里来</view>
+    <view>牛卖收书，让书总有归处</view>
+</view>
+<image class="about-bg" src="https://mini.cainiaoshoushu.com/face/img/about-bg.jpg"></image>

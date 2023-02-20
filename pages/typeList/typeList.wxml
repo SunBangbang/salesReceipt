@@ -1,0 +1,23 @@
+<view class="main">
+    <search key="{{key}}"></search>
+</view>
+<view class="banner">
+    <image mode="aspectFill" src="{{banner}}"></image>
+    <view>{{name}}</view>
+</view>
+<view class="list-main">
+    <view class="list-nav">
+        <order-btn bind:getOrder="changeOrder" nav="{{order}}"></order-btn>
+    </view>
+    <view class="list">
+        <book list="{{list}}"></book>
+    </view>
+    <view hidden="{{list.length>0}}">
+        <empty tip="暂无该分类信息"></empty>
+    </view>
+    <view class="loading-main" hidden="{{!showLoading}}">
+        <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+    </view>
+</view>
+<shop showShop="{{isTop}}"></shop>
+<top showTop="{{isTop}}"></top>

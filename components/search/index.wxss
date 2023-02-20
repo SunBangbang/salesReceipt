@@ -1,0 +1,31 @@
+.search-box {
+    justify-content: space-between;
+    margin: 20rpx 0;
+}
+
+.search-box,.search-left {
+    align-items: center;
+    display: flex;
+}
+
+.search-left {
+    border-radius: 6rpx;
+    height: 60rpx;
+    width: 690rpx;
+}
+
+.search-icon {
+    height: 24rpx;
+    margin: 0 12rpx 0 20rpx;
+    width: 24rpx;
+}
+
+.search-tip {
+    color: #9a9a9a;
+    font-size: 24rpx;
+}
+
+.search-right {
+    height: 46rpx;
+    width: 46rpx;
+}

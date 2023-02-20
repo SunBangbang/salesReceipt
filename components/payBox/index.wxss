@@ -1,0 +1,143 @@
+.lin-enter-active-class,.lin-leave-active-class {
+    bottom: 0;
+}
+
+.lin-enter-class,.lin-leave-to-class {
+    bottom: -100%;
+}
+
+.service-pop {
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 100rpx;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.service-pop-title {
+    color: #333;
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+    line-height: 120rpx;
+    text-align: center;
+}
+
+.pay-pop-item {
+    color: #333;
+    font-size: 28rpx;
+    justify-content: space-between;
+    margin-bottom: 40rpx;
+    padding: 0 30rpx;
+}
+
+.pay-pop-item,.pay-pop-left {
+    align-items: center;
+    display: flex;
+}
+
+.pay-pop-icon {
+    height: 48rpx;
+    margin-right: 10rpx;
+    width: 48rpx;
+}
+
+.pay-pop-balance {
+    color: #ffc15b;
+    font-size: 20rpx;
+}
+
+.pay-pop-right {
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.service-pop-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 34rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 50rpx 30rpx 0;
+    text-align: center;
+    width: 690rpx;
+}
+
+.deliver-pop {
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 560rpx;
+    z-index: 300;
+}
+
+.deliver-title {
+    color: #333;
+    font-size: 30rpx;
+}
+
+.countdown-tip {
+    align-items: center;
+    color: #999;
+    font-size: 26rpx;
+}
+
+.countdown-btn,.countdown-tip {
+    display: flex;
+}
+
+.countdown-btn {
+    border-top: 1px solid #e4e4e4;
+    height: 100rpx;
+    margin-top: 50rpx;
+    width: 100%;
+}
+
+.countdown-btn-item {
+    color: #333;
+    font-size: 30rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    width: 50%;
+}
+
+.success-pop {
+    align-items: center;
+    background: #fff;
+    border-radius: 40rpx;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 400rpx;
+    z-index: 300;
+}
+
+.success-tip {
+    height: 213rpx;
+    margin-top: -50rpx;
+    width: 203rpx;
+}
+
+.deliver-btn {
+    background: #1dc4ab;
+    border-radius: 70rpx;
+    color: #fff;
+    font-size: 34rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 30rpx 0 50rpx;
+    text-align: center;
+    width: 200rpx;
+}

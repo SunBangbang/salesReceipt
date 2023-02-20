@@ -1,0 +1,90 @@
+<view class="{{isPop?'page':''}}">
+    <view class="banner">
+        <image class="banner-bg" src="https://mini.cainiaoshoushu.com/face/img/wallet-bg.png"></image>
+        <view class="banner-main">
+            <view class="banner-key">账户余额（元）</view>
+            <view class="banner-value">{{balance}}</view>
+            <view class="banner-row" style="margin-top:30rpx">
+                <view class="banner-row-item">
+                    <view class="banner-key">累计收入（元）</view>
+                    <view class="banner-value" style="font-size:60rpx">{{totalIncome}}</view>
+                </view>
+                <view class="banner-row-item">
+                    <view class="banner-key">累计支出（元）</view>
+                    <view class="banner-value" style="font-size:60rpx">{{totalPay}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="total">
+        <view class="total-left">可用余额（元）<text>{{balance}}</text>
+        </view>
+        <view bindtap="showAd" class="total-right">提现</view>
+    </view>
+    <view class="other-info">
+        <view bindtap="goLog" class="other-info-item">
+            <view class="other-info-left">
+                <image src="/images/wallet-1.png"></image>
+                <view>账户明细</view>
+            </view>
+            <image class="other-info-right" src="/images/arrow-right3.png"></image>
+        </view>
+        <view bindtap="showRule" class="other-info-item" style="border: none;">
+            <view class="other-info-left">
+                <image src="/images/wallet-2.png"></image>
+                <view>提现说明</view>
+            </view>
+            <image class="other-info-right" src="/images/arrow-right3.png"></image>
+        </view>
+    </view>
+</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<view class="apply" hidden="{{!isApply}}">
+    <view class="apply-total">账户余额 <text>￥{{balance}}</text>
+    </view>
+    <view class="apply-main">
+        <input bindblur="applyMoney" bindinput="applyMoney" placeholder="请输入提现金额" placeholderStyle="color:#888" type="digit" value="{{applyMoney}}"></input>
+        <view bindtap="applyAll">全部提现</view>
+    </view>
+    <view class="apply-btn">
+        <view bindtap="closePop">取消</view>
+        <view bindtap="applyConfirm" class="apply-confirm">确定</view>
+    </view>
+</view>
+<view class="success-pop" hidden="{{!isSubmit}}">
+    <image class="success-tip" src="{{submitImg}}"></image>
+    <view class="deliver-title">{{submitTitle}}</view>
+    <view class="countdown-tip" style="padding:20rpx">{{submitTip}}</view>
+    <view bindtap="closePop" class="deliver-btn">知道了</view>
+</view>
+<view class="apply" hidden="{{!isTip}}">
+    <view class="apply-tip">· 当前版本暂仅支持微信提现</view>
+    <view class="apply-tip">· 单次提现最小额度为1元</view>
+    <view class="apply-tip">· 单次提现最大额度为1000元</view>
+    <view bindtap="closePop" class="apply-tip-btn">好的</view>
+</view>
+<view class="ad-main" hidden="{{!isAd}}">
+    <view class="ad-box">
+        <image class="ad-bg1" src="/images/ad-bg1.png"></image>
+        <image class="ad-bg2" src="/images/ad-bg2.png"></image>
+        <image class="ad-bg3" src="/images/ad-bg3.png"></image>
+        <image class="ad-bg4" src="/images/ad-bg4.png"></image>
+        <view class="ad-con">
+            <view class="ad-con-title">同学，别走</view>
+            <view class="ad-con-text">小牛卖喊您发帖分享领取大大大红包!!</view>
+            <view class="ad-con-subtitle">适用对象</view>
+            <view class="ad-con-text">在本平台<text>真实完成下单回收流程</text>的用户</view>
+            <view class="ad-con-subtitle">分享规则</view>
+            <view class="ad-con-text">在<text>小红书</text>发帖，分享内容<text>不少于50个字，需包含回收订单截图</text>，必须是对牛卖收书<text>正面积极</text>的评价哦。</view>
+            <view class="ad-con-subtitle">奖励说明</view>
+            <view class="ad-con-text">· 按要求发帖即可领取<text> 5元 </text>现金红包</view>
+            <view class="ad-con-text">· 点赞数<text> ≥100</text>，额外领取<text> 10元 </text>现金红包</view>
+            <view class="ad-con-text">· 点赞数<text> ≥1000</text>，额外领取<text> 100元 </text>现金红包</view>
+            <view class="ad-con-text">· 点赞数<text> ≥10000</text>，额外领取<text> 1000元 </text>现金红包</view>
+            <view class="ad-con-subtitle">领取方式</view>
+            <view class="ad-con-text">将<text>分享的帖子截图</text>发给小程序客服，并提供<text>收款二维码</text>，平台核对后会直接给您转账。</view>
+            <view class="ad-con-text" style="margin-top: 20rpx;font-weight: bold;">注：此活动最终解释权归牛卖收书所有。</view>
+            <view bindtap="closeAd" class="ad-con-btn">继续提现</view>
+        </view>
+    </view>
+</view>

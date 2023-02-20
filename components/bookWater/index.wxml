@@ -1,0 +1,12 @@
+<view bindtap="goBookDetail" class="book-item" data-id="{{data.id}}">
+    <view class="book-img">
+        <image class="book-img-main" src="{{data.url}}"></image>
+    </view>
+    <view class="book-name {{!isWater?'book-hidden':''}}">{{data.name}}</view>
+    <view class="book-author {{!isWater?'book-hidden':''}}">{{data.author}}</view>
+    <view class="book-footer">
+        <view class="book-newPrice">￥{{data.sellPrice}}</view>
+        <view class="book-oldPrice">￥{{data.price}}</view>
+        <view class="book-btn">马上抢</view>
+    </view>
+</view>

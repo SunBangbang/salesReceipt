@@ -1,0 +1,56 @@
+<view class="banner">
+    <image class="banner-bg" mode="aspectFill" src="{{list[0].url}}"></image>
+    <view class="banner-mask"></view>
+    <image class="banner-title" src="/images/top-banner.png"></image>
+</view>
+<view class="top-main">
+    <view class="nav">
+        <view bindtap="changeNav" class="{{idx==1?'on':''}}" data-idx="1">畅销榜</view>
+        <view bindtap="changeNav" class="{{idx==2?'on':''}}" data-idx="2">文学榜</view>
+        <view bindtap="changeNav" class="{{idx==3?'on':''}}" data-idx="3">童书榜</view>
+    </view>
+    <view class="list">
+        <view bindtap="goBookDetail" class="item" data-id="{{item.id}}" hidden="{{idx!=1}}" wx:for="{{list}}" wx:key="index">
+            <view class="item-img">
+                <view class="item-img-mask1"></view>
+                <view class="item-img-mask2"></view>
+                <image mode="aspectFill" src="{{item.url}}"></image>
+            </view>
+            <view>
+                <view class="item-name">{{item.name}}</view>
+                <view class="item-author">{{item.author}}</view>
+                <view class="item-press">{{item.press}}</view>
+                <view class="item-sales">
+                    <view class="item-price">￥{{item.sellPrice}}</view>
+                    <view class="item-num">{{item.sales}}人付款</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="goBookDetail" class="item" data-id="{{item.id}}" hidden="{{idx!=2}}" wx:for="{{list}}" wx:key="index">
+            <view>
+                <view class="item-name" style="width:366rpx;font-size:30rpx">{{item.name}}</view>
+                <view class="item-press" style="width:366rpx;">{{item.author}}</view>
+                <view class="item-sales" style="margin-top:50rpx;">
+                    <view class="item-price" style="font-size:32rpx;">￥{{item.sellPrice}}</view>
+                    <view class="item-num" style="font-size:24rpx;">{{item.sales}}人付款</view>
+                </view>
+            </view>
+            <image class="item-img2" mode="aspectFill" src="{{item.url}}"></image>
+        </view>
+        <view bindtap="goBookDetail" class="item" data-id="{{item.id}}" hidden="{{idx!=3}}" wx:for="{{list}}" wx:key="index">
+            <image class="item-img3" mode="aspectFill" src="{{item.url}}"></image>
+            <view class="item-info" style="border-bottom: {{index==list.length-1?'none':''}}">
+                <view class="item-name" style="width:500rpx;">{{item.name}}</view>
+                <view class="item-num2">{{item.sales}}人付款</view>
+            </view>
+        </view>
+    </view>
+    <view hidden="{{list.length>0}}">
+        <empty tip="暂无该榜单信息"></empty>
+    </view>
+    <view class="loading-main" hidden="{{!showLoading}}">
+        <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+    </view>
+</view>
+<shop showShop="{{isTop}}"></shop>
+<top showTop="{{isTop}}"></top>

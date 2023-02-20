@@ -1,0 +1,61 @@
+text,view {
+    font-family: PingFangSC-Regular;
+}
+
+.container {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 200rpx 0;
+}
+
+.page {
+    filter: blur(5px);
+    width: 100%;
+}
+
+.line {
+    box-shadow: 0 2px 8px 0 hsla(0,0%,79%,.5);
+    height: 1px;
+    width: 100%;
+}
+
+.mask {
+    background: rgba(0,0,0,.2);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.close-btn {
+    bottom: 200rpx;
+    height: 100rpx;
+    left: 50%;
+    margin-left: -50rpx;
+    position: fixed;
+    width: 100rpx;
+    z-index: 300;
+}
+
+.footer-tip {
+    background: #f8f8f8;
+    box-sizing: border-box;
+    height: 100rpx;
+    padding-top: 46rpx;
+    width: 100%;
+}
+
+.main {
+    padding: 0 30rpx;
+}
+
+.loading-main {
+    padding: 50rpx 0;
+    width: 100%;
+}

@@ -1,0 +1,121 @@
+<view class="{{isPop?'page':''}}">
+    <view class="banner">
+        <view class="status">{{statusName}}</view>
+        <view class="no-btn">
+            <view>订单编号：{{no}}</view>
+            <view bindtap="copy" class="copy" data-no="{{no}}">复制</view>
+        </view>
+    </view>
+    <view class="address-main">
+        <image class="address-icon" src="/images/icon-location2.png"></image>
+        <view>
+            <view class="name">
+                <text style="margin-right: 30rpx;">{{name}}</text>
+                <text>{{phone}}</text>
+            </view>
+            <view class="address">{{address}}</view>
+        </view>
+    </view>
+    <view class="order-main">
+        <view bindtap="goDetail" class="book-item" data-id="{{item.spuId}}" wx:for="{{list}}" wx:key="index">
+            <image class="book-item-img" mode="aspectFill" src="{{item.skuImage}}"></image>
+            <view>
+                <view class="book-item-info">
+                    <view class="book-item-name" style="width:350rpx;">{{item.goodsName}}</view>
+                    <view class="book-item-name">￥{{item.skuPrice}}</view>
+                </view>
+                <view class="book-item-info">
+                    <view class="book-item-author" style="width:350rpx;">{{item.author}}</view>
+                    <view class="book-item-author">×{{item.num}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="total-main">
+        <view class="total-item">
+            <view>商品总价</view>
+            <text>￥{{originalPrice}}</text>
+        </view>
+        <view class="total-item">
+            <view>运费</view>
+            <text>￥{{freightPrice}}</text>
+        </view>
+        <view class="total-item">
+            <view>商城优惠</view>
+            <text>￥{{couponPrice}}</text>
+        </view>
+        <view class="total-item">
+            <view></view>
+            <view style="display: flex;">
+                <view>合计 <text style="color: #ED5C3E;font-size: 28rpx;">￥{{price}}</text>
+                </view>
+                <view hidden="{{status!=2&&status!=3&&status!=4}}">，实付 <text style="color: #ED5C3E;font-size: 28rpx;">￥{{realPrice}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="remark" hidden="{{!remark}}">
+            <view style="margin-right: 20rpx;">备注</view>
+            <view style="color: #b5b5b5;width: 550rpx">{{remark}}</view>
+        </view>
+    </view>
+    <view class="total-main">
+        <view class="total-item" style="font-size: 28rpx;line-height: 100rpx;border-bottom: 1px solid #e4e4e4;">
+            <view>订单信息</view>
+        </view>
+        <view class="info-main">
+            <view>创建时间：<text>{{createTime}}</text>
+            </view>
+            <view>付款时间：<text>{{payTime}}</text>
+            </view>
+            <view>发货时间：<text>{{deliveryTime}}</text>
+            </view>
+            <view>完成时间：<text>{{receivingTime}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="order-footer">
+        <view bindtap="cancelOrder" class="cancel-btn" hidden="{{status!=1&&status!=2}}">取消订单</view>
+        <view bindtap="checkShip" class="share-btn" hidden="{{status!=3&&status!=4}}">
+            <text>查看物流</text>
+        </view>
+        <view bindtap="sellAgain" class="share-btn" hidden="{{status!=5}}">
+            <text>重新下单</text>
+        </view>
+        <button class="share-btn" openType="share" plain="true">
+            <text>分享订单</text>
+        </button>
+        <view bindtap="payOrder" class="share-btn" hidden="{{status!=1}}">
+            <text>支付订单</text>
+        </view>
+        <view catchtap="confirmReceipt" class="share-btn" hidden="{{status!=3}}">
+            <text>确认收货</text>
+        </view>
+    </view>
+</view>
+<view bindtap="closePop" class="mask" data-type="mask" hidden="{{!isPop}}"></view>
+<image bindtap="closePop" class="close-btn" hidden="{{!isClose}}" src="/images/icon-pop-close2.png"></image>
+<view class="pop" hidden="{{!isDelete}}">
+    <view class="pop-tip">确认取消该订单？</view>
+    <view class="pop-btn">
+        <view bindtap="closePop">取消</view>
+        <view bindtap="confirmCancel" class="confirm-btn">确定</view>
+    </view>
+</view>
+<pay-box balance="{{balance}}" bind:closePay="closePop" bind:completePay="completePay" couponMoney="{{couponPrice}}" freightMoney="{{freightPrice}}" id="pay" orderCode="{{no}}" orderMoney="{{originalPrice}}" price="{{price}}" showPay="{{isPay}}"></pay-box>
+<view class="sell-warn" hidden="{{!isTip}}">
+    <view class="sell-scan-title">抱歉</view>
+    <view class="sell-warn-tip">暂无物流信息</view>
+    <view bindtap="closePop" class="sell-scan-btn">好的</view>
+</view>
+<view class="flow-pop" hidden="{{!isShip}}">
+    <view class="flow-no">
+        <view>德邦：{{shipNo}}</view>
+        <view bindtap="copy" class="copy2" data-no="{{shipNo}}">复制</view>
+    </view>
+    <view class="flow-main">
+        <view class="flow-tip" hidden="{{shipList.length>0}}">暂无物流信息</view>
+        <l-steps activeIndex="{{shipList.length-1}}" direction="column" hidden="{{shipList.length>0}}" reverse="{{true}}" stepMinHeight="160">
+            <l-step describe="{{item.description}}" title="{{item.time}}" wx:for="{{shipList}}" wx:key="index"></l-step>
+        </l-steps>
+    </view>
+</view>

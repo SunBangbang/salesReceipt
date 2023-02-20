@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "l-transition": "/lin-ui/transition/index",
+        "l-countdown": "/lin-ui/countdown/index"
+    }
+}

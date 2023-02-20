@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "search": "/components/search/index",
+        "l-notice-bar": "/lin-ui/notice-bar/index",
+        "l-sticky": "/lin-ui/sticky/index",
+        "l-sticky-item": "/lin-ui/sticky-item/index",
+        "book": "/components/book/index",
+        "i-load-more": "/dist/load-more/index",
+        "footer": "/components/footer/index"
+    }
+}

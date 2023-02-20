@@ -1,0 +1,47 @@
+<view class="{{isPop?'page':''}}">
+    <view class="share-box">
+        <image class="share-bg" src="https://mini.cainiaoshoushu.com/face/img/share-bg.png"></image>
+        <view class="share-main">
+            <view class="share-main-row">
+                <image class="share-avatar" src="{{avatar}}"></image>
+                <view class="share-vip">VIP</view>
+                <view bindtap="goRule" class="share-rule">如何赚收益 >> </view>
+            </view>
+            <view class="share-main-row2">
+                <view>
+                    <view class="share-total">{{total}}</view>
+                    <view class="share-tip">分享获现金</view>
+                </view>
+                <view bindtap="showCode" class="share-btn">立即分享</view>
+            </view>
+        </view>
+    </view>
+    <view class="log-title">推广记录</view>
+    <view class="log-list" hidden="{{list.length==0}}">
+        <view class="log-item" wx:for="{{list}}" wx:key="index">
+            <view class="log-status">{{item.statusName}}</view>
+            <view class="log-left">
+                <image class="log-avatar" src="{{item.avatar}}"></image>
+                <view>
+                    <view class="log-no">{{item.orderNo}}</view>
+                    <view class="log-time">{{item.createdAt}}</view>
+                </view>
+            </view>
+            <view class="log-right">￥{{item.proxyPrice}}</view>
+        </view>
+    </view>
+    <view class="loading-main" hidden="{{!showLoading}}">
+        <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+    </view>
+    <view hidden="{{list.length>0}}">
+        <empty img="https://mini.cainiaoshoushu.com/face/img/empty-log.png" tip="暂无推广记录，快去推广吧~"></empty>
+    </view>
+</view>
+<view bindtap="closePop" class="mask" hidden="{{!isPop}}"></view>
+<view class="share-code" hidden="{{!isPop}}">
+    <image src="data:image/gif;base64,{{shareCode}}"></image>
+    <view class="share-code-btn">
+        <view bindtap="save">保存</view>
+        <button class="on" openType="share" plain="true">分享</button>
+    </view>
+</view>

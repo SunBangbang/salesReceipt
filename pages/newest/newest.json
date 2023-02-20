@@ -1,0 +1,12 @@
+{
+    "navigationBarBackgroundColor": "#1DC4AB",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "甄选新书",
+    "usingComponents": {
+        "search": "/components/search/index",
+        "shop": "/components/shop/index",
+        "top": "/components/top/index",
+        "empty": "/components/empty/index",
+        "i-load-more": "/dist/load-more/index"
+    }
+}

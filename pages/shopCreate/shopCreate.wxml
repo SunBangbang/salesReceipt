@@ -1,0 +1,83 @@
+<view class="{{isPop?'page':''}}">
+    <view bindtap="goAddress" class="address-container">
+        <image class="address-icon" src="/images/icon-location.png"></image>
+        <view class="address-main">
+            <view class="address-user">{{addressInfo.name}} <text>{{addressInfo.mobile}}</text>
+            </view>
+            <view class="address-detail">{{addressInfo.address+addressInfo.detailAddress}}</view>
+        </view>
+        <image class="address-arrow" src="/images/arrow-right.png"></image>
+    </view>
+    <view class="address-container">
+        <view class="book-item" wx:for="{{list}}" wx:key="index">
+            <image class="book-item-img" mode="aspectFill" src="{{item.image}}"></image>
+            <view>
+                <view class="book-item-info">
+                    <view class="book-item-name" style="width:350rpx;">{{item.name}}</view>
+                    <view class="book-item-name">￥{{item.price}}</view>
+                </view>
+                <view class="book-item-info">
+                    <view class="book-item-author">{{item.author}}</view>
+                    <view class="book-item-author">×{{item.num}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="deliver-time">发货时间 付款后24小时内</view>
+        <view class="deliver-type">
+            <view>配送方式<text>快递配送</text>
+            </view>
+            <view bindtap="showDeliver" class="deliver-type-right">
+                <view>{{freightMoney==0?'包邮':'￥'+freightMoney}}</view>
+                <image src="/images/arrow-right.png"></image>
+            </view>
+        </view>
+        <view class="deliver-type" hidden="{{couponMoney==0}}">
+            <view>商城优惠<text>{{couponName}}</text>
+            </view>
+            <view bindtap="showCoupon" class="deliver-type-right">
+                <view style="color: #ed5c3e">-￥{{couponMoney}}</view>
+                <image src="/images/arrow-right.png"></image>
+            </view>
+        </view>
+        <view class="total-calc">
+            <text style="color: #b5b5b5; font-size:24rpx">共 {{totalNum}} 件</text> 小计 : <text style="color: #ed5c3e">￥{{totalMoney}}</text>
+        </view>
+    </view>
+    <view class="address-container order-remark">
+        <view>订单备注</view>
+        <input bindblur="getInfo" bindinput="getInfo" placeholder="选填，请先和客服协商一致" placeholderStyle="color: #b5b5b5" value="{{remark}}"></input>
+    </view>
+    <view bindtap="submitOrder" class="submit-btn">提交订单</view>
+</view>
+<view bindtap="closePop" class="mask" data-type="mask" hidden="{{!isPop}}"></view>
+<view class="deliver-pop" hidden="{{!showAddress}}">
+    <image class="deliver-img" src="/images/tip-deliver.png"></image>
+    <view class="deliver-title">您还没有收货地址</view>
+    <view class="deliver-tip">快去添加吧，海量好书等你来</view>
+    <view bindtap="goAddress" class="deliver-btn">去设置</view>
+</view>
+<l-transition lClass="service-pop" lEnterActiveClass="lin-enter-active-class" lEnterClass="lin-enter-class" lLeaveActiveClass="lin-leave-active-class" lLeaveToClass="lin-leave-to-class" name="" show="{{showDeliver}}">
+    <view>
+        <view class="service-pop-title">关于运费</view>
+        <view class="service-pop-subtitle">运费怎么计算？</view>
+        <view class="service-pop-desc">非偏远地区，基础运费 4 元，满 28 元免运费；</view>
+        <view class="service-pop-desc">偏远地区（新疆、西藏）基础运费 20 元，超过 3 本，每本增加 20 元。</view>
+        <view class="service-pop-subtitle" style="margin-top: 50rpx">运费参与哪些优惠？</view>
+        <view class="service-pop-desc">非偏远地区的用户购买促销书籍（如9.9包邮）享受免运费优惠；</view>
+        <view class="service-pop-desc">运费不参与活动红包和满减券的优惠；</view>
+        <view class="service-pop-desc">运费不参与余额支付的折扣优惠。</view>
+        <view bindtap="closePop" class="service-pop-btn">知道了</view>
+    </view>
+</l-transition>
+<l-transition lClass="service-pop" lEnterActiveClass="lin-enter-active-class" lEnterClass="lin-enter-class" lLeaveActiveClass="lin-leave-active-class" lLeaveToClass="lin-leave-to-class" name="" show="{{showCoupon}}">
+    <view>
+        <view class="service-pop-title">商城优惠</view>
+        <view bindtap="chooseCoupon" class="coupon-pop-item" data-item="{{item}}" wx:for="{{couponList}}" wx:key="index">
+            <view>{{item.name}} <text hidden="{{item.price==0}}" style="color:#ED5C3E;">￥{{item.price}}</text>
+            </view>
+            <image src="{{item.code==couponCode?'/images/icon-choosed2.png':'/images/icon-unchoosed.png'}}"></image>
+        </view>
+        <view bindtap="closePop" class="service-pop-btn">完成</view>
+    </view>
+</l-transition>
+<pay-box balance="{{balance}}" bind:closePay="completePay" bind:completePay="completePay" couponMoney="{{couponMoney}}" freightMoney="{{freightMoney}}" id="pay" orderCode="{{orderCode}}" orderMoney="{{orderMoney}}" price="{{totalMoney}}" showPay="{{showPay}}"></pay-box>

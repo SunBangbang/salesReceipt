@@ -1,0 +1,74 @@
+.book-item {
+    border-top: 1px solid #e4e4e4;
+    display: flex;
+    padding: 30rpx 0;
+    width: 690rpx;
+}
+
+.book-img {
+    background: #f8f8f8;
+    border-radius: 6rpx;
+    height: 260rpx;
+    margin-right: 30rpx;
+    width: 200rpx;
+}
+
+.book-info .name {
+    color: #333;
+    font-size: 34rpx;
+    line-height: 48rpx;
+}
+
+.book-info .author,.book-info .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 370rpx;
+}
+
+.book-info .author {
+    color: #b5b5b5;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    margin: 10rpx 0;
+}
+
+.book-info .press {
+    color: #d5bc8b;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 370rpx;
+}
+
+.book-info .price {
+    align-items: center;
+    display: flex;
+    margin-top: 70rpx;
+}
+
+.book-info .money {
+    color: #333;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    margin-right: 14rpx;
+}
+
+.book-info .discount {
+    border: 1px solid #ffcabf;
+    border-radius: 4rpx;
+    color: #ed5c3e;
+    font-size: 20rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    padding: 0 10rpx;
+    text-align: center;
+}
+
+.book-btn {
+    height: 60rpx;
+    margin: 200rpx 0 0 30rpx;
+    width: 60rpx;
+}

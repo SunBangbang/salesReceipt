@@ -1,0 +1,39 @@
+<view class="{{isPop?'page':''}}">
+    <view class="list" hidden="{{list.length==0}}">
+        <view bindtap="chooseItem" class="item" data-item="{{item}}" wx:for="{{list}}" wx:key="index">
+            <view class="item-row">
+                <view class="name">{{item.name}}</view>
+                <view class="phone">{{item.mobile}}</view>
+            </view>
+            <view class="address">{{item.provinceName+item.cityName+(item.countryName?item.countryName:'')+item.detailAddress}}</view>
+            <view class="item-row">
+                <view catchtap="doDefault" class="default" data-item="{{item}}">
+                    <image src="{{item.isDefault==1?'/images/icon-choosed2.png':'/images/icon-unchoosed.png'}}"></image>
+                    <view>默认地址</view>
+                </view>
+                <view class="default">
+                    <view catchtap="doEdit" class="default-item" data-id="{{item.id}}" style="margin-right:30rpx">
+                        <image src="/images/icon-edit2.png"></image>
+                        <view>编辑</view>
+                    </view>
+                    <view catchtap="doDelete" class="default-item" data-id="{{item.id}}">
+                        <image src="/images/icon-delete3.png"></image>
+                        <view>删除</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view hidden="{{list.length>0}}" style="padding-top: 100rpx">
+        <empty img="https://mini.cainiaoshoushu.com/face/img/empty-address.png" tip="暂无地址信息，快去添加吧"></empty>
+    </view>
+    <view bindtap="doEdit" class="save-btn">添加新地址</view>
+</view>
+<view class="mask" hidden="{{!isPop}}"></view>
+<view class="pop" hidden="{{!isPop}}">
+    <view class="pop-tip">确认删除该地址信息？</view>
+    <view class="pop-btn">
+        <view bindtap="closePop">取消</view>
+        <view bindtap="confirmDelete" class="confirm-btn">确定</view>
+    </view>
+</view>

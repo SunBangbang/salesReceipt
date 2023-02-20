@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#312c42",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "推广达人",
+    "usingComponents": {
+        "empty": "/components/empty/index",
+        "i-load-more": "/dist/load-more/index"
+    },
+    "onReachBottomDistance": 50
+}

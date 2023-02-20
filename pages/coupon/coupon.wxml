@@ -1,0 +1,32 @@
+<view class="nav">
+    <view bindtap="changeNav" class="{{idx==1?'on':''}}" data-idx="1">当前可用</view>
+    <view bindtap="changeNav" class="{{idx==0?'on':''}}" data-idx="0">待领取</view>
+    <view bindtap="changeNav" class="{{idx==2?'on':''}}" data-idx="2">已使用</view>
+    <view bindtap="changeNav" class="{{idx==3?'on':''}}" data-idx="3">已失效</view>
+</view>
+<view class="coupon-item" wx:for="{{couponList}}" wx:key="index">
+    <image class="coupon-bg" src="{{item.status<2?'/images/coupon-bg2.png':'/images/coupon-bg3.png'}}"></image>
+    <view class="coupon-main">
+        <view class="coupon-left" style="color: {{item.status>1?'#aeaeae':''}}">
+            <view>
+                <view style="font-size: 30rpx; color: {{item.status>1?'#aeaeae':''}}">
+                    <text style="font-size: 40rpx">￥{{item.type==3?item.addPrice:item.lastPrice}}</text> {{item.name}}</view>
+                <view hidden="{{item.type==3}}">订单满 {{item.fullPrice}} 元使用（不含邮费）</view>
+                <view hidden="{{item.type!=3}}">订单满足下单条件即可使用</view>
+                <view>使用期限 {{item.startTime}}-{{item.endTime}}</view>
+            </view>
+        </view>
+        <view class="coupon-text" hidden="{{item.status!=1}}">券</view>
+        <view hidden="{{item.userStatus!=0}}">
+            <view bindtap="getCoupon" class="coupon-btn" data-id="{{item.id}}" hidden="{{item.useType==3}}">立即领取</view>
+            <view class="coupon-text3" hidden="{{item.useType!=3}}">任务券</view>
+        </view>
+        <view class="coupon-text2" hidden="{{item.status!=2&&item.status!=3}}">{{item.status==2?'已使用':'已失效'}}</view>
+    </view>
+</view>
+<view hidden="{{couponList.length>0}}" style="padding-top: 100rpx">
+    <empty img="https://mini.cainiaoshoushu.com/face/img/empty-coupon.png" tip="emmm~优惠券没有了"></empty>
+</view>
+<view class="loading-main" hidden="{{!showLoading}}">
+    <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+</view>

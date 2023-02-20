@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "个人中心",
+    "usingComponents": {
+        "footer": "/components/footer/index",
+        "l-badge": "/lin-ui/badge/index"
+    }
+}

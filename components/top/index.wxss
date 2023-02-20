@@ -1,0 +1,7 @@
+.top-btn {
+    bottom: 300rpx;
+    height: 80rpx;
+    position: fixed;
+    right: 30rpx;
+    width: 80rpx;
+}

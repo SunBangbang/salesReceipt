@@ -1,0 +1,31 @@
+page {
+    background: #f8f8f8;
+}
+
+.fx {
+    display: flex;
+}
+
+.banner {
+    height: 390rpx;
+    width: 100%;
+}
+
+.about {
+    padding-top: 50rpx;
+}
+
+.about view {
+    color: #502f20;
+    font-size: 26rpx;
+    margin-bottom: 20rpx;
+    text-align: center;
+}
+
+.about-bg {
+    bottom: 0;
+    height: 309rpx;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}

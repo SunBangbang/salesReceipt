@@ -1,0 +1,33 @@
+<view class="fx">
+    <image class="banner" src="https://mini.cainiaoshoushu.com/face/img/newest-banner.jpg"></image>
+</view>
+<view class="main">
+    <search color="#FFFFFF"></search>
+    <view class="list">
+        <view bindtap="goBookDetail" class="item" data-id="{{item.id}}" wx:for="{{list}}" wx:key="index">
+            <view class="item-img">
+                <view class="item-img-mask1"></view>
+                <view class="item-img-mask2"></view>
+                <image mode="aspectFill" src="{{item.url}}"></image>
+            </view>
+            <view>
+                <view class="item-name">{{item.name}}</view>
+                <view class="item-author">{{item.author}}</view>
+                <view class="item-press">{{item.press}}</view>
+                <view class="item-price">
+                    <view class="item-money">￥{{item.sellPrice}}</view>
+                    <view class="item-discount">二手{{item.discount}}折</view>
+                </view>
+            </view>
+            <image class="item-btn" src="/images/icon-shopping.png"></image>
+        </view>
+    </view>
+    <view hidden="{{list.length>0}}">
+        <empty tip="暂无新书上架"></empty>
+    </view>
+    <view class="loading-main" hidden="{{!showLoading}}">
+        <i-load-more loading="{{isLoading}}" tip="{{loadingTip}}"></i-load-more>
+    </view>
+</view>
+<shop showShop="{{isTop}}"></shop>
+<top showTop="{{isTop}}"></top>

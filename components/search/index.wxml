@@ -1,0 +1,7 @@
+<view class="search-box">
+    <view bindtap="goSearch" class="search-left" style="width:{{width}};background:{{color}}">
+        <image class="search-icon" src="/images/icon-search.png"></image>
+        <view class="search-tip">ISBN / 书名 / 作者 / 出版社</view>
+    </view>
+    <image bindtap="goType" class="search-right" hidden="{{!showRightIcon}}" src="/images/icon-type.png"></image>
+</view>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "卖书给牛卖收书",
+    "usingComponents": {
+        "i-message": "../../dist/message/index",
+        "l-transition": "/lin-ui/transition/index"
+    }
+}
